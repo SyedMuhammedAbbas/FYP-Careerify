@@ -9,7 +9,7 @@ import { BiSearch } from "react-icons/bi";
 export default function DashboardCharts() {
   return (
     <>
-      <div className="grid pl-56">
+      <div className="grid">
         <div className="flex justify-end p-10 overflow-y-hidden">
           <form className="bg-[#c7c7c7] flex items-center rounded-[20px] w-[400px] h-[60px]">
             <input
@@ -32,11 +32,11 @@ export default function DashboardCharts() {
             <div className="w-full xl:w-4/12 px-4">
               <CardPieChart />
             </div>
-          </div>
-          <div className="flex flex-wrap mt-4">
             <div className="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
               <CardPageVisits />
             </div>
+          </div>
+          <div className="flex flex-wrap mt-4">
             <div className="w-full xl:w-4/12 px-4">
               <CardSocialTraffic />
             </div>

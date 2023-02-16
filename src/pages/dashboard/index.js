@@ -5,7 +5,9 @@ import DashboardCharts from "@/components/Dashboard/DashboardCharts";
 export default function DashboardPage() {
   return (
     <>
-      <DashboardCharts />
+      <div className="m-10 ml-56 bg-[#b9b9b9] rounded-[20px]">
+        <DashboardCharts />
+      </div>
     </>
   );
 }
