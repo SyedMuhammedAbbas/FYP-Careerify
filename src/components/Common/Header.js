@@ -17,7 +17,7 @@ export default function Header() {
   return (
     <>
       {pathname === "/" ? (
-        <div className="fixed flex justify-center z-10 items-center top-0 w-[100vw] h-[80px] bg-transparent">
+        <div className="flex justify-center  items-center top-0 w-[100vw] h-[80px] bg-transparent">
           <div className="flex justify-center gap-7">
             <Link href="/dashboard">
               <div className="flex gap-2 cursor-pointer text-[20px] text-[#adadad] hover:text-[#ffffff]">
@@ -27,18 +27,22 @@ export default function Header() {
                 <div className=" capitalize">Dashboard</div>
               </div>
             </Link>
-            <div className="flex gap-2 cursor-pointer text-[20px] text-[#adadad] hover:text-[#ffffff]">
-              <div className=" pt-[7px]">
-                <VscGraph />
+            <Link href="/trends">
+              <div className="flex gap-2 cursor-pointer text-[20px] text-[#adadad] hover:text-[#ffffff]">
+                <div className=" pt-[7px]">
+                  <VscGraph />
+                </div>
+                <div className=" capitalize">Trends</div>
               </div>
-              <div className=" capitalize">Trends</div>
-            </div>
-            <div className="flex gap-2 cursor-pointer text-[20px] text-[#adadad] hover:text-[#ffffff]">
-              <div className=" pt-[7px]">
-                <BsGraphUp />
+            </Link>
+            <Link href="/projection">
+              <div className="flex gap-2 cursor-pointer text-[20px] text-[#adadad] hover:text-[#ffffff]">
+                <div className=" pt-[7px]">
+                  <BsGraphUp />
+                </div>
+                <div className=" capitalize">Projection</div>
               </div>
-              <div className=" capitalize">Projection</div>
-            </div>
+            </Link>
           </div>
         </div>
       ) : (

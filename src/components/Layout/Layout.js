@@ -9,7 +9,7 @@ export default function Layout({ children }) {
         <Header />
         <Sidebar />
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   );

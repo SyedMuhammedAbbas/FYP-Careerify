@@ -5,10 +5,8 @@ import CardPageVisits from "../Cards/CardPageVisits";
 import CardPieChart from "../Cards/CardPieChart";
 import CardSocialTraffic from "../Cards/CardSocialTraffic";
 import { BiSearch } from "react-icons/bi";
-import { SiBmcsoftware } from "react-icons/si";
-import CardLineChart2 from "../Cards/CardLineChart2";
 
-export default function DashboardCharts() {
+export default function ProjectionCharts() {
   return (
     <>
       <div className="grid">
@@ -23,29 +21,7 @@ export default function DashboardCharts() {
             </button>
           </form>
         </div>
-
         <div className=" grid gap-5 overflow-y-auto">
-          <div className="flex justify-center gap-14 p-10">
-            {[...Array(4)].map((i) => {
-              return (
-                <div className="w-[220px] rounded-[10px] relative z-10 h-[190px] bg-[#ffffff] shadow-md">
-                  <div className="w-[250px] rounded-[10px] absolute left-[-15px] z-20 h-[170px] bg-[#ffffff] shadow-md">
-                    <div className="grid items-center p-5">
-                      <div className="text-[30px] text-[#0B9588]">
-                        <SiBmcsoftware />
-                      </div>
-                      <div className="text-[40px] font-semibold text-[#000000]">
-                        4.17
-                      </div>
-                      <div className="text-[20px] font-[600] text-[#7e7e7e]">
-                        Systems
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
           <div className=" flex flex-wrap">
             <div className="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
               <CardLineChart />
@@ -57,14 +33,14 @@ export default function DashboardCharts() {
               <CardPieChart />
             </div>
             <div className="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
-              <CardLineChart2 />
+              <CardPageVisits />
             </div>
           </div>
-          {/* <div className="flex flex-wrap mt-4">
+          <div className="flex flex-wrap mt-4">
             <div className="w-full xl:w-4/12 px-4">
               <CardSocialTraffic />
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
     </>
