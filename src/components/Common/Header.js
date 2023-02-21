@@ -17,10 +17,10 @@ export default function Header() {
   return (
     <>
       {pathname === "/" ? (
-        <div className="flex justify-center  items-center top-0 w-[100vw] h-[80px] bg-transparent">
+        <div className="fixed flex justify-center z-10 items-center top-0 w-[100vw] h-[80px] bg-[#ffffff] bg-opacity-5 backdrop-blur-md">
           <div className="flex justify-center gap-7">
             <Link href="/dashboard">
-              <div className="flex gap-2 cursor-pointer text-[20px] text-[#adadad] hover:text-[#ffffff]">
+              <div className="flex gap-2 cursor-pointer text-[20px] text-[#F15824] hover:text-[#ffffff]">
                 <div className=" pt-[7px]">
                   <AiOutlineHome />
                 </div>
@@ -28,7 +28,7 @@ export default function Header() {
               </div>
             </Link>
             <Link href="/trends">
-              <div className="flex gap-2 cursor-pointer text-[20px] text-[#adadad] hover:text-[#ffffff]">
+              <div className="flex gap-2 cursor-pointer text-[20px] text-[#F15824] hover:text-[#ffffff]">
                 <div className=" pt-[7px]">
                   <VscGraph />
                 </div>
@@ -36,7 +36,7 @@ export default function Header() {
               </div>
             </Link>
             <Link href="/projection">
-              <div className="flex gap-2 cursor-pointer text-[20px] text-[#adadad] hover:text-[#ffffff]">
+              <div className="flex gap-2 cursor-pointer text-[20px] text-[#F15824] hover:text-[#ffffff]">
                 <div className=" pt-[7px]">
                   <BsGraphUp />
                 </div>

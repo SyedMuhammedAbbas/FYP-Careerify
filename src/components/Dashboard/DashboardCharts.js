@@ -24,8 +24,8 @@ export default function DashboardCharts() {
           </form>
         </div>
 
-        <div className=" grid gap-5 overflow-y-auto">
-          <div className="flex justify-center gap-14 p-10">
+        <div className=" grid gap-5 mx-auto justify-center overflow-y-auto overflow-x-hidden">
+          <div className="flex overflow-x-auto justify-start gap-14 mx-auto flex-wrap p-10">
             {[...Array(4)].map((i) => {
               return (
                 <div className="w-[220px] rounded-[10px] relative z-10 h-[190px] bg-[#ffffff] shadow-md">
@@ -47,16 +47,16 @@ export default function DashboardCharts() {
             })}
           </div>
           <div className=" flex flex-wrap">
-            <div className="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
+            <div className=" w-3/4 mb-12 px-4">
               <CardLineChart />
             </div>
-            <div className="w-full xl:w-4/12 px-4">
+            <div className=" w-1/4 px-4">
               <CardBarChart />
             </div>
-            <div className="w-full xl:w-4/12 px-4">
+            <div className=" w-1/4 px-4">
               <CardPieChart />
             </div>
-            <div className="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
+            <div className=" w-3/4 mb-12 px-4">
               <CardLineChart2 />
             </div>
           </div>
