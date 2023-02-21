@@ -70,88 +70,93 @@ export default function Contact() {
   //   };
 
   return (
-    <div className=" min-h-[100vh] max-h-[100%] rounded-[20px] py-12">
-      <div className="max-w-xl mx-auto h-[700px] px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-center">
-          <div className="md:grid ">
-            <div className="mt-5 h-[700px] ">
-              <form
-              //   onSubmit={handleSubmit}
-              >
-                <div className="grid shadow sm:rounded-[20px] h-[600px] sm:overflow-hidden bg-white">
-                  <div className="px-4 py-5  sm:p-6">
-                    <div className="grid gap-6">
-                      <div className="">
-                        <label
-                          htmlFor="name"
-                          className="block text-sm font-medium text-gray-700"
-                        >
-                          Name
-                        </label>
-                        <input
-                          type="text"
-                          name="name"
-                          id="name"
-                          autoComplete="name"
-                          //   value={name}
-                          //   onChange={(e) => setName(e.target.value)}
-                          className="mt-1 focus:ring-[#EB5831] focus:border-[#EB5831] h-[40px] bg-[#e6e6e6] block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                          required
-                        />
-                      </div>
-
-                      <div className="">
-                        <label
-                          htmlFor="email"
-                          className="block text-sm font-medium text-gray-700"
-                        >
-                          Email address
-                        </label>
-                        <input
-                          type="email"
-                          name="email"
-                          id="email"
-                          autoComplete="email"
-                          //   value={email}
-                          //   onChange={(e) => setEmail(e.target.value)}
-                          className="mt-1 focus:ring-[#EB5831] focus:border-[#EB5831] h-[40px] bg-[#e6e6e6] block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                          required
-                        />
-                      </div>
-
-                      <div className="">
-                        <label
-                          htmlFor="message"
-                          className="block text-sm font-medium text-gray-700"
-                        >
-                          Message
-                        </label>
-                        <div className="mt-1">
-                          <textarea
-                            id="message"
-                            name="message"
-                            rows="3"
-                            // value={message}
-                            // onChange={(e) => setMessage(e.target.value)}
-                            className="shadow-sm focus:ring-[#EB5831] focus:border-[#EB5831] mt-1 bg-[#e6e6e6] block w-full sm:text-sm border-gray-300 rounded-md"
+    <div className="h-[80vh] rounded-[20px]">
+      <div className="text-[45px] font-semibold text-[#000000] py-2">
+        Contact Us
+      </div>
+      <div className="overflow-y-auto h-[60vh]">
+        <div className="max-w-xl mx-auto h-[700px] px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-center">
+            <div className="md:grid ">
+              <div className="mt-5 h-[700px] ">
+                <form
+                //   onSubmit={handleSubmit}
+                >
+                  <div className="grid shadow sm:rounded-[20px] h-[600px] sm:overflow-hidden bg-white">
+                    <div className="px-4 py-5  sm:p-6">
+                      <div className="grid gap-6">
+                        <div className="">
+                          <label
+                            htmlFor="name"
+                            className="block text-sm font-medium text-gray-700"
+                          >
+                            Name
+                          </label>
+                          <input
+                            type="text"
+                            name="name"
+                            id="name"
+                            autoComplete="name"
+                            //   value={name}
+                            //   onChange={(e) => setName(e.target.value)}
+                            className="mt-1 focus:ring-[#EB5831] focus:border-[#EB5831] h-[40px] bg-[#e6e6e6] block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                             required
-                          ></textarea>
+                          />
+                        </div>
+
+                        <div className="">
+                          <label
+                            htmlFor="email"
+                            className="block text-sm font-medium text-gray-700"
+                          >
+                            Email address
+                          </label>
+                          <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            autoComplete="email"
+                            //   value={email}
+                            //   onChange={(e) => setEmail(e.target.value)}
+                            className="mt-1 focus:ring-[#EB5831] focus:border-[#EB5831] h-[40px] bg-[#e6e6e6] block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                            required
+                          />
+                        </div>
+
+                        <div className="">
+                          <label
+                            htmlFor="message"
+                            className="block text-sm font-medium text-gray-700"
+                          >
+                            Message
+                          </label>
+                          <div className="mt-1">
+                            <textarea
+                              id="message"
+                              name="message"
+                              rows="3"
+                              // value={message}
+                              // onChange={(e) => setMessage(e.target.value)}
+                              className="shadow-sm focus:ring-[#EB5831] focus:border-[#EB5831] mt-1 bg-[#e6e6e6] block w-full sm:text-sm border-gray-300 rounded-md"
+                              required
+                            ></textarea>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
-                    {/* {status === "success" && ( */}
-                    <p className="text-[#EB5831] pb-5 font-medium">
-                      Thank you for your message! We will get back to you soon.
-                    </p>
-                    {/* )} */}
-                    {status === "error" && (
-                      <p className="text-red-500 font-medium">
-                        Oops! Something went wrong. Please try again later.
+                    <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                      {/* {status === "success" && ( */}
+                      <p className="text-[#EB5831] pb-5 font-medium">
+                        Thank you for your message! We will get back to you
+                        soon.
                       </p>
-                    )}
-                    {/* {status === "pending" ? (
+                      {/* )} */}
+                      {status === "error" && (
+                        <p className="text-red-500 font-medium">
+                          Oops! Something went wrong. Please try again later.
+                        </p>
+                      )}
+                      {/* {status === "pending" ? (
                       <button
                         type="submit"
                         className="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-white bg-[#EB5831] hover:bg-[#EB5831] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#EB5831] disabled:opacity-50"
@@ -180,16 +185,17 @@ export default function Contact() {
                         Submitting
                       </button>
                     ) : ( */}
-                    <button
-                      type="submit"
-                      className="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-white bg-[#EB5831] hover:bg-[#EB5831] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#EB5831]"
-                    >
-                      Submit
-                    </button>
-                    {/* )} */}
+                      <button
+                        type="submit"
+                        className="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-white bg-[#EB5831] hover:bg-[#EB5831] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#EB5831]"
+                      >
+                        Submit
+                      </button>
+                      {/* )} */}
+                    </div>
                   </div>
-                </div>
-              </form>
+                </form>
+              </div>
             </div>
           </div>
         </div>
