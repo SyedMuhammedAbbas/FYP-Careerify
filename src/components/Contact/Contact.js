@@ -1,48 +1,7 @@
-// import { BsFacebook } from "react-icons/bs";
-// import { AiFillInstagram } from "react-icons/ai";
-
-// export default function Contact() {
-//   return (
-//     <>
-//       <div className="grid items-center justify-center min-h-[100vh] max-h-[100%] gap-20 p-20">
-//         <div className="text-[30px] text-[#000000] font-bold text-left">
-//           Contact Us
-//         </div>
-//         <div className="text-[25px] text-[#000000]">
-//           Follow Us on social media platform to get the updates on latest trends
-//         </div>
-//         <div className="flex gap-10 flex-wrap justify-center">
-//           <div className="text-[#2c5488] text-[70px]">
-//             <BsFacebook />
-//           </div>
-//           <div className="text-[#8e2424] text-[70px]">
-//             <AiFillInstagram />
-//           </div>
-//           {/* <div className="text-[#000000] text-[70px]">
-//             <BsPeopleFill />
-//           </div> */}
-//         </div>
-//         <div className="text-[30px] font-semibold text-[#000000]">
-//           Careerify is a platform which initially targets the students audience
-//           who are looking for the job in demand, through our platform people,
-//           especially students will enhance their skill set on the basis of the
-//           job market and future growth field.
-//           <br />
-//           <br />
-//           Not only the current trends but also the predicts the future trends of
-//           the job market.
-//           <br />
-//           <br />
-//           Initially we have started from Pakistan, but sooner we'll provide this
-//           platform globally and help people in decision making.
-//         </div>
-//       </div>
-//     </>
-//   );
-// }
-
 import { useState } from "react";
 import axios from "axios";
+import { IoIosArrowForward } from "react-icons/io";
+import { BiSearch } from "react-icons/bi";
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -71,10 +30,27 @@ export default function Contact() {
 
   return (
     <div className="h-[80vh] rounded-[20px]">
-      <div className="text-[45px] font-semibold text-[#000000] py-2">
-        Contact Us
+      <div className="flex relative p-2">
+        <div className="text-[25px] font-semibold text-[#000000] flex gap-2">
+          <div className="text-[#F15A24]">Careerify</div>
+          <div className="flex items-center">
+            <IoIosArrowForward />
+          </div>{" "}
+          <div>Contact</div>
+        </div>
+        <div className="justify-end absolute right-10">
+          <form className="bg-[#e5e5e5] flex items-center rounded-[20px] w-[300px] h-[40px]">
+            <input
+              className="bg-[#e5e5e5] rounded-[20px] outline-none w-[250px] h-[30px] placeholder:text-[20px] placeholder:text-[#6a6a6a] pl-6 text-[25px] text-[#000000]"
+              placeholder="Search..."
+            />
+            <button className="rounded-[20px] flex justify-center text-[#6a6a6a] text-[30px] px-2">
+              <BiSearch />
+            </button>
+          </form>
+        </div>
       </div>
-      <div className="overflow-y-auto h-[60vh]">
+      <div className="overflow-y-auto h-[70vh]">
         <div className="max-w-xl mx-auto h-[700px] px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center">
             <div className="md:grid ">

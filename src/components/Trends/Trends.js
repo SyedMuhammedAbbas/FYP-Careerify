@@ -12,7 +12,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { IoIosArrowForward } from "react-icons/io";
 
-export default function DashboardCharts() {
+export default function Trends() {
   var settings = {
     dots: true,
     // dotsClass: "slick-dots",
@@ -37,7 +37,7 @@ export default function DashboardCharts() {
             <div className="flex items-center">
               <IoIosArrowForward />
             </div>{" "}
-            <div>Dashboard</div>
+            <div>Trends</div>
           </div>
           <div className="justify-end absolute right-10">
             <form className="bg-[#e5e5e5] flex items-center rounded-[20px] w-[300px] h-[40px]">
