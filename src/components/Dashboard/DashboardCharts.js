@@ -28,8 +28,8 @@ export default function DashboardCharts() {
           <div className="flex overflow-x-auto justify-start gap-14 mx-auto flex-wrap p-10">
             {[...Array(4)].map((i) => {
               return (
-                <div className="w-[220px] rounded-[10px] relative z-10 h-[190px] bg-[#ffffff] shadow-md">
-                  <div className="w-[250px] rounded-[10px] absolute left-[-15px] z-20 h-[170px] bg-[#ffffff] shadow-md">
+                <div className="w-[150px] rounded-[10px] relative z-10 h-[150px] bg-[#ffffff] shadow-md">
+                  <div className="w-[180px] rounded-[10px] absolute left-[-15px] z-20 h-[140px] bg-[#ffffff] shadow-md">
                     <div className="grid items-center p-5">
                       <div className="text-[30px] text-[#0B9588]">
                         <SiBmcsoftware />
