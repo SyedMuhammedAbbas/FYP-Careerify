@@ -15,7 +15,7 @@ export default function Sidebar() {
   return (
     <>
       {pathname !== "/" ? (
-        <div className="bg-[#F15A24] float-left w-56 pl-6 h-[100vh] fixed z-10">
+        <div className="bg-[#F15A24] float-left w-56 pl-6 h-[100vh] fixed">
           <nav className="grid gap-10">
             <Link href="/">
               <div className="float-left pr-4 pt-5">
