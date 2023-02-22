@@ -88,9 +88,9 @@ export default function ProjectionCharts() {
             <div className=" w-1/4 px-4">
               <CardPieChart />
             </div>
-            <div className=" w-3/4 mb-12 px-4">
+            {/* <div className=" w-3/4 mb-12 px-4">
               <CardLineChart2 />
-            </div>
+            </div> */}
           </div>
           {/* <div className="flex flex-wrap mt-4">
             <div className="w-full xl:w-4/12 px-4">
