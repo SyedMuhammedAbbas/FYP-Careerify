@@ -1,11 +1,11 @@
-import Logo from "../../images/logo_white.png";
+import Logo from "../../images/logo_bnw_1.png";
 import Image from "next/image";
 
 export default function Footer() {
   return (
     <>
-      <div className="bg-[#444444] w-[100vw]">
-        <footer className="bg-[#000000] flex bg-opacity-30 py-8">
+      <div className="bg-[#d87450] w-[100vw]">
+        <footer className="bg-[#F15A24] flex bg-opacity-30 py-8">
           {/* <div className=""> */}
           <div className="flex w-[100vw] h-auto p-10 flex-wrap relative">
             <div className="flex ">
