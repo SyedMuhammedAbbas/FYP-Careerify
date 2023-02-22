@@ -39,7 +39,7 @@ export default function JobCategories() {
   return (
     <>
       <div className="w-[100vw] flex justify-center p-10">
-        <div className="bg-[#3e3e3e] flex justify-center rounded-[20px] w-[70vw] h-[400px] p-10 px-10">
+        <div className="bg-[#3e3e3e] bg-opacity-[0.85] backdrop-blur-[20px] flex justify-center rounded-[20px] w-[70vw] h-[400px] p-10 px-10">
           <div className="">
             <div className="flex h-[50px] mx-20 justify-center gap-20 border-b-[2px] border-[#a6a6a6]">
               <div className="flex gap-2 justify-center w-[200px]  cursor-pointer  font-bold text-[18px] text-[#F15A24] border-b-[4px] border-[#F15A24]">
