@@ -16,7 +16,9 @@ export default function Home_Section() {
         <div className="bg-[url('../images/background_code.jpg')] bg-[length:100%_100%] min-h-[100vh] max-h-[100%] overflow-x-hidden bg-no-repeat flex items-center justify-center">
           <div className="grid justify-center gap-1 bg-opacity-80 backdrop-blur-[6px]">
             <div className="flex flex-col gap-5 items-center justify-center w-[100vw] h-[70vh] pt-20">
-              <Image src={Logo} alt="logo" width={400} height={150} />
+              <div className="text-[50px] font-[400] font-sfpro text-[#F15A24]">
+                Search your future right here!
+              </div>
               <form className="bg-[#c7c7c7] flex items-center rounded-[20px] w-[40vw] h-[5rem]">
                 <input
                   className="bg-[#c7c7c7] rounded-[20px] outline-none w-[35vw] h-[5rem] placeholder:text-[25px] placeholder:text-[#6a6a6a] pl-6 text-[25px] text-[#000000]"

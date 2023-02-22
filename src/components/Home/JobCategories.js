@@ -39,24 +39,24 @@ export default function JobCategories() {
   return (
     <>
       <div className="w-[100vw] flex justify-center p-10">
-        <div className="bg-[#e3e3e3] flex justify-center rounded-[20px] w-[70vw] h-[400px] p-10 px-10">
+        <div className="bg-[#3e3e3e] flex justify-center rounded-[20px] w-[70vw] h-[400px] p-10 px-10">
           <div className="">
             <div className="flex h-[50px] mx-20 justify-center gap-20 border-b-[2px] border-[#a6a6a6]">
-              <div className="flex gap-2 justify-center w-[200px]  cursor-pointer  font-bold text-[18px] text-[#F15A24] border-b-[2px] border-[#F15A24]">
+              <div className="flex gap-2 justify-center w-[200px]  cursor-pointer  font-bold text-[18px] text-[#F15A24] border-b-[4px] border-[#F15A24]">
                 <div className="mt-1">
                   <BsBuilding />
                 </div>
                 <div>Jobs by Company</div>
               </div>
 
-              <div className="flex gap-2 justify-center w-[200px]  cursor-pointer text-[#c37b61] hover:font-bold text-[18px] hover:text-[#F15A24] hover:border-b-[2px] hover:border-[#F15A24]">
+              <div className="flex gap-2 justify-center w-[200px]  cursor-pointer text-[#c37b61] hover:font-bold text-[18px] hover:text-[#F15A24] hover:border-b-[4px] hover:border-[#F15A24]">
                 <div className="mt-1">
                   <ImLocation />
                 </div>
                 <div>Jobs by Location</div>
               </div>
 
-              <div className="flex gap-2 justify-center w-[200px]  cursor-pointer text-[#c37b61] hover:font-bold text-[18px] hover:text-[#F15A24] hover:border-b-[2px] hover:border-[#F15A24]">
+              <div className="flex gap-2 justify-center w-[200px]  cursor-pointer text-[#c37b61] hover:font-bold text-[18px] hover:text-[#F15A24] hover:border-b-[4px] hover:border-[#F15A24]">
                 <div className="mt-1">
                   <MdScreenSearchDesktop />
                 </div>
@@ -67,7 +67,7 @@ export default function JobCategories() {
             <div className="pt-10 overflow-y-auto flex justify-center">
               <ul className="flex flex-wrap gap-6 justify-center">
                 {jobNames.map((i) => (
-                  <li className="cursor-pointer hover:underline text-center">
+                  <li className="cursor-pointer text-[#ffffff] hover:underline text-center">
                     {i}
                   </li>
                 ))}
