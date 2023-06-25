@@ -1,32 +1,37 @@
 import React, { useEffect, useRef } from "react";
 import CardBarChart from "../Cards/CardBarChart";
 import CardLineChart from "../Cards/CardLineChart";
-import CardPageVisits from "../Cards/CardPageVisits";
+// import CardPageVisits from "../Cards/CardPageVisits";
 import CardPieChart from "../Cards/CardPieChart";
-import CardSocialTraffic from "../Cards/CardSocialTraffic";
+// import CardSocialTraffic from "../Cards/CardSocialTraffic";
 import { BiSearch } from "react-icons/bi";
 import { SiBmcsoftware } from "react-icons/si";
-import CardLineChart2 from "../Cards/CardLineChart2";
-import Slider from "react-slick";
+// import CardLineChart2 from "../Cards/CardLineChart2";
+// import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { IoIosArrowForward } from "react-icons/io";
+import JobByTitleAndSiteGraph from "./Charts/LineCharts/JobByTitleAndSiteGraph";
+import JobDataByCities from "./Charts/BarCharts/JobDataByCities";
+import JobPostingsTrend from "./Charts/LineCharts/JobPostingsTrend";
+import JobDistributionByType from "./Charts/PieCharts/JobDistributionByType";
 
 export default function DashboardCharts() {
-  var settings = {
-    dots: true,
-    // dotsClass: "slick-dots",
-    infinite: true,
-    speed: 400,
-    // autoplay: true,
-    // autoplaySpeed: 2000,
-    // slidesToShow: 4,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    initialSlide: 0,
-    // appendDots: (dots) => <ul>{dots}</ul>,
-    // customPaging: (i) => <div className="ft-slick__dots--custom"></div>,
-  };
+  const data = [
+    {
+      posted_date: "2023-01-01",
+      job_title: "Software Engineer",
+      min_salary: 50000,
+      max_salary: 70000,
+    },
+    {
+      posted_date: "2023-01-01",
+      job_title: "Data Analyst",
+      min_salary: 40000,
+      max_salary: 60000,
+    },
+    // Add more data entries...
+  ];
 
   return (
     <>
@@ -79,24 +84,19 @@ export default function DashboardCharts() {
             {/* </Slider> */}
           </div>
           <div className=" flex flex-wrap">
-            <div className=" w-3/4 mb-12 px-4">
-              <CardLineChart />
+            <div className=" w-2/4 mb-12 px-4">
+              {/* <CardLineChart /> */}
+              <JobPostingsTrend />
             </div>
-            <div className=" w-1/4 px-4">
-              <CardBarChart />
+            <div className=" w-2/4 px-4">
+              {/* <CardPieChart /> */}
+              <JobDistributionByType />
             </div>
-            <div className=" w-1/4 px-4">
-              <CardPieChart />
+            <div className=" w-2/4 px-4">
+              {/* <CardBarChart /> */}
+              <JobDataByCities />
             </div>
-            {/* <div className=" w-3/4 mb-12 px-4">
-              <CardLineChart2 />
-            </div> */}
           </div>
-          {/* <div className="flex flex-wrap mt-4">
-            <div className="w-full xl:w-4/12 px-4">
-              <CardSocialTraffic />
-            </div>
-          </div> */}
         </div>
       </div>
     </>

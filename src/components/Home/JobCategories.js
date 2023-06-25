@@ -1,47 +1,68 @@
 import { ImLocation } from "react-icons/im";
 import { BsBuilding } from "react-icons/bs";
 import { MdScreenSearchDesktop } from "react-icons/md";
+import React, { useState, useEffect, useCallback } from "react";
+import axios from "axios";
+import { BASEURL } from "../../../config";
 
 export default function JobCategories() {
-  const jobNames = [
-    "Data Science",
-    "Word Press Developer",
-    "Backend Developer",
-    "Frontend Developer",
-    "Data Analyst",
-    "Data Science",
-    "Word Press Developer",
-    "Backend Developer",
-    "Frontend Developer",
-    "Data Analyst",
-    "Data Science",
-    "Word Press Developer",
-    "Backend Developer",
-    "Frontend Developer",
-    "Data Analyst",
-    "Data Science",
-    "Word Press Developer",
-    "Backend Developer",
-    "Frontend Developer",
-    "Data Analyst",
-    "Data Science",
-    "Word Press Developer",
-    "Backend Developer",
-    "Frontend Developer",
-    "Data Analyst",
-    "Data Science",
-    "Word Press Developer",
-    "Backend Developer",
-    "Frontend Developer",
-    "Data Analyst",
-  ];
+  const [jobTitles, setJobTitles] = useState([]);
+
+  const fetchJobTitleData = useCallback(async () => {
+    try {
+      const response = await axios.get(`${BASEURL}/jobs/DistinctJobTitles`);
+      const apiData = response.data;
+
+      setJobTitles(apiData);
+    } catch (error) {
+      console.log(error.message);
+    }
+  }, []);
+
+  console.log(jobTitles);
+  useEffect(() => {
+    fetchJobTitleData();
+  }, [fetchJobTitleData]);
+
+  // const jobNames = [
+  //   "Data Science",
+  //   "Word Press Developer",
+  //   "Backend Developer",
+  //   "Frontend Developer",
+  //   "Data Analyst",
+  //   "Data Science",
+  //   "Word Press Developer",
+  //   "Backend Developer",
+  //   "Frontend Developer",
+  //   "Data Analyst",
+  //   "Data Science",
+  //   "Word Press Developer",
+  //   "Backend Developer",
+  //   "Frontend Developer",
+  //   "Data Analyst",
+  //   "Data Science",
+  //   "Word Press Developer",
+  //   "Backend Developer",
+  //   "Frontend Developer",
+  //   "Data Analyst",
+  //   "Data Science",
+  //   "Word Press Developer",
+  //   "Backend Developer",
+  //   "Frontend Developer",
+  //   "Data Analyst",
+  //   "Data Science",
+  //   "Word Press Developer",
+  //   "Backend Developer",
+  //   "Frontend Developer",
+  //   "Data Analyst",
+  // ];
 
   return (
     <>
       <div className="w-[100vw] flex justify-center p-10">
         <div className="bg-[#3e3e3e] bg-opacity-[0.85] backdrop-blur-[20px] flex justify-center rounded-[20px] w-[70vw] h-[400px] p-10 px-10">
           <div className="">
-            <div className="flex h-[50px] mx-20 justify-center gap-20 border-b-[2px] border-[#a6a6a6]">
+            <div className="flex h-[50px] overflow-x-auto mx-20 justify-center gap-20 border-b-[2px] border-[#a6a6a6]">
               <div className="flex gap-2 justify-center w-[200px]  cursor-pointer  font-bold text-[18px] text-[#F15A24] border-b-[4px] border-[#F15A24]">
                 <div className="mt-1">
                   <BsBuilding />
@@ -64,11 +85,14 @@ export default function JobCategories() {
               </div>
             </div>
 
-            <div className="pt-10 overflow-y-auto flex justify-center">
+            <div className="pt-10 h-[300px] overflow-y-auto flex justify-center">
               <ul className="flex flex-wrap gap-6 justify-center">
-                {jobNames.map((i) => (
-                  <li className="cursor-pointer text-[#ffffff] hover:underline text-center">
-                    {i}
+                {jobTitles.map((title, index) => (
+                  <li
+                    key={index}
+                    className="cursor-pointer text-[#ffffff] hover:underline text-center"
+                  >
+                    {title.Job_titles}
                   </li>
                 ))}
               </ul>
