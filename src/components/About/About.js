@@ -14,7 +14,7 @@ export default function About() {
             <div className="flex items-center">
               <IoIosArrowForward />
             </div>{" "}
-            <div>Trends</div>
+            <div>About</div>
           </div>
           <div className="justify-end absolute right-10">
             <form className="bg-[#e5e5e5] flex items-center rounded-[20px] w-[300px] h-[40px]">
@@ -41,16 +41,30 @@ export default function About() {
             </div>
           </div>
           <div className="text-[25px] font-semibold text-[#000000]">
-            Careerify is a platform which initially targets the students
-            audience who are looking for the job in demand, through our platform
-            people, especially students will enhance their skill set on the
-            basis of the job market and future growth field.
-            <br />
-            Not only the current trends but also the predicts the future trends
-            of the job market.
-            <br />
-            Initially we have started from Pakistan, but sooner we'll provide
-            this platform globally and help people in decision making.
+            Welcome to Careerify, your premier destination for exploring the
+            ever-changing landscape of IT job opportunities in Pakistan. At
+            Careerify, we are dedicated to providing you with comprehensive
+            insights and trends derived from meticulous data scraping of various
+            job posting sites. Our mission is to empower you with the knowledge
+            and tools necessary to navigate the dynamic world of IT employment.
+            Through our meticulously curated graphs and trends, we aim to
+            showcase the pulse of the industry, highlighting emerging
+            technologies, in-demand skills, and the evolving job market. With
+            Careerify, you can stay ahead of the curve by gaining a deep
+            understanding of the IT job trends in Pakistan. Our platform offers
+            real-time updates, ensuring you have access to the latest
+            information on job openings, salary ranges, and industry demands. We
+            are committed to assisting you in making informed decisions about
+            your career path. Whether you are a student, a job seeker, or a
+            seasoned professional, Careerify equips you with data-driven
+            insights to help you identify lucrative opportunities, align your
+            skills with market demands, and excel in the competitive IT
+            industry. Join us on this exciting journey as we transform raw data
+            into meaningful and actionable information. Discover the power of
+            Careerify and unlock the potential of your IT career in Pakistan.
+            Let us be your guide in making informed choices and achieving
+            professional success. Explore the trends, navigate the
+            opportunities, and thrive with Careerify.
           </div>
         </div>
       </div>

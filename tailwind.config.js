@@ -7,6 +7,7 @@ module.exports = {
       sfpro: "SF Pro Display Medium",
       montserrat: "Montserrat",
       lemonmilk: "LEMON MILK",
+      roboto: "Roboto",
     },
     extend: {},
   },

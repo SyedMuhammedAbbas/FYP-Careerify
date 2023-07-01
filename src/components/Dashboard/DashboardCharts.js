@@ -17,22 +17,6 @@ import JobPostingsTrend from "./Charts/LineCharts/JobPostingsTrend";
 import JobDistributionByType from "./Charts/PieCharts/JobDistributionByType";
 
 export default function DashboardCharts() {
-  const data = [
-    {
-      posted_date: "2023-01-01",
-      job_title: "Software Engineer",
-      min_salary: 50000,
-      max_salary: 70000,
-    },
-    {
-      posted_date: "2023-01-01",
-      job_title: "Data Analyst",
-      min_salary: 40000,
-      max_salary: 60000,
-    },
-    // Add more data entries...
-  ];
-
   return (
     <>
       <div className="grid overflow-y-auto h-[90vh]">
@@ -45,7 +29,7 @@ export default function DashboardCharts() {
             <div>Dashboard</div>
           </div>
           <div className="justify-end absolute right-10">
-            <form className="bg-[#e5e5e5] flex items-center rounded-[20px] w-[300px] h-[40px]">
+            <div className="bg-[#e5e5e5] flex items-center rounded-[20px] w-[300px] h-[40px]">
               <input
                 className="bg-[#e5e5e5] rounded-[20px] outline-none w-[250px] h-[30px] placeholder:text-[20px] placeholder:text-[#6a6a6a] pl-6 text-[25px] text-[#000000]"
                 placeholder="Search..."
@@ -53,7 +37,7 @@ export default function DashboardCharts() {
               <button className="rounded-[20px] flex justify-center text-[#6a6a6a] text-[30px] px-2">
                 <BiSearch />
               </button>
-            </form>
+            </div>
           </div>
         </div>
 

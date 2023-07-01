@@ -24,39 +24,6 @@ export default function JobCategories() {
     fetchJobTitleData();
   }, [fetchJobTitleData]);
 
-  // const jobNames = [
-  //   "Data Science",
-  //   "Word Press Developer",
-  //   "Backend Developer",
-  //   "Frontend Developer",
-  //   "Data Analyst",
-  //   "Data Science",
-  //   "Word Press Developer",
-  //   "Backend Developer",
-  //   "Frontend Developer",
-  //   "Data Analyst",
-  //   "Data Science",
-  //   "Word Press Developer",
-  //   "Backend Developer",
-  //   "Frontend Developer",
-  //   "Data Analyst",
-  //   "Data Science",
-  //   "Word Press Developer",
-  //   "Backend Developer",
-  //   "Frontend Developer",
-  //   "Data Analyst",
-  //   "Data Science",
-  //   "Word Press Developer",
-  //   "Backend Developer",
-  //   "Frontend Developer",
-  //   "Data Analyst",
-  //   "Data Science",
-  //   "Word Press Developer",
-  //   "Backend Developer",
-  //   "Frontend Developer",
-  //   "Data Analyst",
-  // ];
-
   return (
     <>
       <div className="w-[100vw] flex justify-center p-10">

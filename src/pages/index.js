@@ -20,6 +20,11 @@ export default function Home() {
           href="https://fonts.googleapis.com/css2?family=Dongle&family=Roboto+Condensed:wght@300&family=Source+Serif+4:ital,wght@1,200&display=swap"
           rel="stylesheet"
         ></link>
+
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+          rel="stylesheet"
+        />
       </Head>
 
       <div>
