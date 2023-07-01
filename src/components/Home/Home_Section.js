@@ -24,7 +24,7 @@ export default function Home_Section() {
             />
           </div>
 
-          <div className="flex flex-col items-center justify-center bg-opacity-40 backdrop-blur-lg text-white bg-black min-h-screen">
+          <div className="flex flex-col items-center justify-center pt-10 bg-opacity-40 backdrop-blur-lg text-white bg-black min-h-screen">
             <div className="text-2xl leading-[50px] font-montserrat text-[35px] font-extrabold text-white  w-1/2 flex justify-start h-[150px]">
               <Typewriter
                 options={{
