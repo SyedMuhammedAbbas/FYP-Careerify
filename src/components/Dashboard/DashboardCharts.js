@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from "react";
-import CardBarChart from "../Cards/CardBarChart";
-import CardLineChart from "../Cards/CardLineChart";
+import React, { useEffect, useRef, useState } from "react";
+// import CardBarChart from "../Cards/CardBarChart";
+// import CardLineChart from "../Cards/CardLineChart";
 // import CardPageVisits from "../Cards/CardPageVisits";
-import CardPieChart from "../Cards/CardPieChart";
+// import CardPieChart from "../Cards/CardPieChart";
 // import CardSocialTraffic from "../Cards/CardSocialTraffic";
 import { BiSearch } from "react-icons/bi";
 import { SiBmcsoftware } from "react-icons/si";
@@ -15,8 +15,26 @@ import JobByTitleAndSiteGraph from "./Charts/LineCharts/JobByTitleAndSiteGraph";
 import JobDataByCities from "./Charts/BarCharts/JobDataByCities";
 import JobPostingsTrend from "./Charts/LineCharts/JobPostingsTrend";
 import JobDistributionByType from "./Charts/PieCharts/JobDistributionByType";
+import DurationOfJobPostingsByTitle from "./Charts/ChartsByJobTitles/DurationOfJobPostingsByTitle";
+import JobAverageSalaryByCityAndTitle from "./Charts/ChartsByJobTitles/JobAverageSalaryByCityAndTitle";
+import JobAverageSalaryByJobTypeAndTitle from "./Charts/ChartsByJobTitles/JobAverageSalaryByJobTypeAndTitle";
+import JobByAverageSalary from "./Charts/ChartsByJobTitles/JobByAverageSalary";
+import JobByAverageSalaryByYearAndCompany from "./Charts/ChartsByJobTitles/JobByAverageSalaryByYearAndCompany";
+import JobBySalaryRangeDateAndTitle from "./Charts/ChartsByJobTitles/JobBySalaryRangeDateAndTitle";
+import JobCountByCity from "./Charts/ChartsByJobTitles/JobCountByCity";
+import JobOpeningsByCityAndTitle from "./Charts/ChartsByJobTitles/JobOpeningsByCityAndTitle";
+import JobOpeningsByCompanyAndTitle from "./Charts/ChartsByJobTitles/JobOpeningsByCompanyAndTitle";
+import JobOpeningsByDateAndTitle from "./Charts/ChartsByJobTitles/JobOpeningsByDateAndTitle";
+import JobOpeningsByJobTypeAndTitle from "./Charts/ChartsByJobTitles/JobOpeningsByJobTypeAndTitle";
+import JobOpeningsByWebsiteAndTitle from "./Charts/ChartsByJobTitles/JobOpeningsByWebsiteAndTitle";
 
 export default function DashboardCharts() {
+  const [searchResult, setSearchResult] = useState();
+  const [searchTitle, setSearchTitle] = useState();
+
+  const handleSearch = () => {
+    setSearchTitle(searchResult);
+  };
   return (
     <>
       <div className="grid overflow-y-auto h-[90vh]">
@@ -33,8 +51,13 @@ export default function DashboardCharts() {
               <input
                 className="bg-[#e5e5e5] rounded-[20px] outline-none w-[250px] h-[30px] placeholder:text-[20px] placeholder:text-[#6a6a6a] pl-6 text-[25px] text-[#000000]"
                 placeholder="Search..."
+                value={searchResult}
+                onChange={(e) => setSearchResult(e.target.value)}
               />
-              <button className="rounded-[20px] flex justify-center text-[#6a6a6a] text-[30px] px-2">
+              <button
+                onClick={() => handleSearch()}
+                className="rounded-[20px] flex justify-center text-[#6a6a6a] text-[30px] px-2"
+              >
                 <BiSearch />
               </button>
             </div>
@@ -67,20 +90,61 @@ export default function DashboardCharts() {
             })}
             {/* </Slider> */}
           </div>
-          <div className=" flex flex-wrap">
-            <div className=" w-2/4 mb-12 px-4">
-              {/* <CardLineChart /> */}
-              <JobPostingsTrend />
+          {searchTitle && searchTitle.length === 0 ? (
+            <div className=" flex flex-wrap">
+              <div className=" w-2/4 mb-12 px-4">
+                {/* <CardLineChart /> */}
+                <JobPostingsTrend />
+              </div>
+              <div className=" w-2/4 px-4">
+                {/* <CardPieChart /> */}
+                <JobDistributionByType />
+              </div>
+              <div className=" w-2/4 px-4">
+                {/* <CardBarChart /> */}
+                <JobDataByCities />
+              </div>
             </div>
-            <div className=" w-2/4 px-4">
-              {/* <CardPieChart /> */}
-              <JobDistributionByType />
+          ) : (
+            <div className=" flex flex-wrap">
+              <div className=" w-2/4 mb-12 px-4">
+                <DurationOfJobPostingsByTitle jobTitle={searchTitle} />
+              </div>
+              <div className=" w-2/4 px-4">
+                <JobAverageSalaryByCityAndTitle jobTitle={searchTitle} />
+              </div>
+              <div className=" w-2/4 px-4">
+                <JobAverageSalaryByJobTypeAndTitle jobTitle={searchTitle} />
+              </div>
+              <div className=" w-2/4 px-4">
+                <JobByAverageSalary jobTitle={searchTitle} />
+              </div>
+              <div className=" w-2/4 px-4">
+                <JobByAverageSalaryByYearAndCompany jobTitle={searchTitle} />
+              </div>
+              <div className=" w-2/4 px-4">
+                <JobBySalaryRangeDateAndTitle jobTitle={searchTitle} />
+              </div>
+              <div className=" w-2/4 px-4">
+                <JobCountByCity jobTitle={searchTitle} />
+              </div>
+              <div className=" w-2/4 px-4">
+                <JobOpeningsByCityAndTitle jobTitle={searchTitle} />
+              </div>
+              <div className=" w-2/4 px-4">
+                <JobOpeningsByCompanyAndTitle jobTitle={searchTitle} />
+              </div>
+              <div className=" w-2/4 px-4">
+                <JobOpeningsByDateAndTitle jobTitle={searchTitle} />
+              </div>
+              <div className=" w-2/4 px-4">
+                <JobOpeningsByJobTypeAndTitle jobTitle={searchTitle} />
+              </div>
+              <div className=" w-2/4 px-4">
+                <JobOpeningsByWebsiteAndTitle jobTitle={searchTitle} />
+              </div>
             </div>
-            <div className=" w-2/4 px-4">
-              {/* <CardBarChart /> */}
-              <JobDataByCities />
-            </div>
-          </div>
+          )}
         </div>
       </div>
     </>
