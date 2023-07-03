@@ -6,20 +6,20 @@ import axios from "axios";
 import { BASEURL } from "../../../config";
 
 export default function JobCategories() {
-  const [jobTitles, setJobTitles] = useState([]);
+  const [companyName, setcompanyName] = useState([]);
 
   const fetchJobTitleData = useCallback(async () => {
     try {
-      const response = await axios.get(`${BASEURL}/jobs/DistinctJobTitles`);
+      const response = await axios.get(`${BASEURL}/jobs/uniqueCompanyNames`);
       const apiData = response.data;
 
-      setJobTitles(apiData);
+      setcompanyName(apiData);
     } catch (error) {
       console.log(error.message);
     }
   }, []);
 
-  console.log(jobTitles);
+  console.log(companyName);
   useEffect(() => {
     fetchJobTitleData();
   }, [fetchJobTitleData]);
@@ -54,12 +54,12 @@ export default function JobCategories() {
 
             <div className="pt-10 h-[300px] overflow-y-auto flex justify-center">
               <ul className="flex flex-wrap gap-6 justify-center">
-                {jobTitles.map((title, index) => (
+                {companyName.map((title, index) => (
                   <li
                     key={index}
                     className="cursor-pointer text-[#ffffff] hover:underline text-center"
                   >
-                    {title.Job_titles}
+                    {title.Company_name}
                   </li>
                 ))}
               </ul>
