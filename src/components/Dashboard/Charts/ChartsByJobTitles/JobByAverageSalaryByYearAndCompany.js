@@ -33,22 +33,30 @@ export default function JobByAverageSalaryByYearAndCompany({ jobTitle }) {
   }, [jobTitle]);
 
   return (
-    <ResponsiveContainer width="100%" height={300}>
-      <LineChart data={data}>
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="Year" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        {data.map((company) => (
-          <Line
-            key={`${company.Company_name}_${company.Year}`}
-            dataKey="AverageSalary"
-            data={company}
-            name={company.Company_name}
-          />
-        ))}
-      </LineChart>
-    </ResponsiveContainer>
+    <>
+      <div className="bg-white shadow-lg rounded-lg p-4">
+        <ResponsiveContainer width="100%" height={300}>
+          <LineChart data={data}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="Year" />
+            <YAxis />
+            <Tooltip />
+            {/* <Legend /> */}
+            {data.map((company) => (
+              <Line
+                key={`${company.Company_name}_${company.Year}`}
+                dataKey="AverageSalary"
+                data={company}
+                name={company.Company_name}
+              />
+            ))}
+          </LineChart>
+        </ResponsiveContainer>
+        <p className="text-[15px] text-gray-500">
+          The graph displays the average salary for different companies over
+          multiple years based on a specific job title.
+        </p>
+      </div>
+    </>
   );
 }

@@ -30,7 +30,7 @@ import JobOpeningsByWebsiteAndTitle from "./Charts/ChartsByJobTitles/JobOpenings
 
 export default function DashboardCharts() {
   const [searchResult, setSearchResult] = useState();
-  const [searchTitle, setSearchTitle] = useState();
+  const [searchTitle, setSearchTitle] = useState("");
 
   const handleSearch = () => {
     setSearchTitle(searchResult);
@@ -90,23 +90,20 @@ export default function DashboardCharts() {
             })}
             {/* </Slider> */}
           </div>
-          {searchTitle && searchTitle.length === 0 ? (
+          {!searchTitle ? (
             <div className=" flex flex-wrap">
               <div className=" w-2/4 mb-12 px-4">
-                {/* <CardLineChart /> */}
                 <JobPostingsTrend />
               </div>
               <div className=" w-2/4 px-4">
-                {/* <CardPieChart /> */}
                 <JobDistributionByType />
               </div>
               <div className=" w-2/4 px-4">
-                {/* <CardBarChart /> */}
                 <JobDataByCities />
               </div>
             </div>
           ) : (
-            <div className=" flex flex-wrap">
+            <div className=" flex flex-wrap space-y-4">
               <div className=" w-2/4 mb-12 px-4">
                 <DurationOfJobPostingsByTitle jobTitle={searchTitle} />
               </div>
@@ -123,6 +120,9 @@ export default function DashboardCharts() {
                 <JobByAverageSalaryByYearAndCompany jobTitle={searchTitle} />
               </div>
               <div className=" w-2/4 px-4">
+                <JobOpeningsByJobTypeAndTitle jobTitle={searchTitle} />
+              </div>
+              <div className=" w-2/4 px-4">
                 <JobBySalaryRangeDateAndTitle jobTitle={searchTitle} />
               </div>
               <div className=" w-2/4 px-4">
@@ -136,9 +136,6 @@ export default function DashboardCharts() {
               </div>
               <div className=" w-2/4 px-4">
                 <JobOpeningsByDateAndTitle jobTitle={searchTitle} />
-              </div>
-              <div className=" w-2/4 px-4">
-                <JobOpeningsByJobTypeAndTitle jobTitle={searchTitle} />
               </div>
               <div className=" w-2/4 px-4">
                 <JobOpeningsByWebsiteAndTitle jobTitle={searchTitle} />

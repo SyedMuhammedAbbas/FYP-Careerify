@@ -47,8 +47,8 @@ export default function JobBySalaryRangeDateAndTitle({ jobTitle }) {
         <Area
           type="monotone"
           dataKey="MaxSalary"
-          fill="#8884d8"
-          stroke="#8884d8"
+          fill="#82ca9d" // Different color for MaxSalary
+          stroke="#82ca9d" // Different color for MaxSalary
         />
       </AreaChart>
     </ResponsiveContainer>

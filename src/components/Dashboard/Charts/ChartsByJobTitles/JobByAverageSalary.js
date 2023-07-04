@@ -32,14 +32,22 @@ export default function JobByAverageSalary({ jobTitle }) {
   }, [jobTitle]);
 
   return (
-    <ResponsiveContainer width="100%" height={300}>
-      <ScatterChart data={data}>
-        <CartesianGrid />
-        <XAxis dataKey="Company_name" />
-        <YAxis dataKey="AverageSalary" />
-        <Tooltip cursor={{ strokeDasharray: "3 3" }} />
-        <Scatter name="Average Salary" data={data} fill="#8884d8" />
-      </ScatterChart>
-    </ResponsiveContainer>
+    <>
+      <div className="bg-white shadow-lg rounded-lg p-4">
+        <ResponsiveContainer width="100%" height={300}>
+          <ScatterChart data={data}>
+            <CartesianGrid />
+            <XAxis dataKey="Company_name" />
+            <YAxis dataKey="AverageSalary" />
+            <Tooltip cursor={{ strokeDasharray: "3 3" }} />
+            <Scatter name="Average Salary" data={data} fill="#8884d8" />
+          </ScatterChart>
+        </ResponsiveContainer>
+        <p className="text-[15px] text-gray-500">
+          This scatter plot represents the average salary for different
+          companies offering jobs related to the searched job title.
+        </p>
+      </div>
+    </>
   );
 }

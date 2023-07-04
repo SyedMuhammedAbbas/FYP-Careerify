@@ -32,15 +32,29 @@ export default function DurationOfJobPostingsByTitle({ jobTitle }) {
   }, [jobTitle]);
 
   return (
-    <ResponsiveContainer width="100%" height={400}>
-      <AreaChart data={data}>
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="Duration" />
-        <YAxis />
-        <Tooltip />
-        {/* Use Area component for Area Chart */}
-        <Area type="monotone" dataKey="JobOpenings" fill="#8884d8" />
-      </AreaChart>
-    </ResponsiveContainer>
+    <>
+      <div className="bg-white shadow-lg rounded-lg p-4">
+        <ResponsiveContainer width="100%" height={400}>
+          <AreaChart data={data}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="Posted_month_year" />
+            <YAxis />
+            <Tooltip />
+            <Area
+              type="monotone"
+              dataKey="Duration"
+              fill="#8884d8"
+              stroke="#8884d8"
+            />
+          </AreaChart>
+        </ResponsiveContainer>
+        <p className="text-[15px] text-gray-500">
+          This graph shows the duration of job postings for the searched job
+          title over time. The x-axis represents the month and year when the job
+          was posted, while the y-axis represents the duration in days. The
+          filled area represents the duration of job postings.
+        </p>
+      </div>
+    </>
   );
 }

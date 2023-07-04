@@ -32,14 +32,22 @@ export default function JobAverageSalaryByJobTypeAndTitle({ jobTitle }) {
   }, [jobTitle]);
 
   return (
-    <ResponsiveContainer width="100%" height={400}>
-      <LineChart data={data}>
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="Job_type" />
-        <YAxis />
-        <Tooltip />
-        <Line type="monotone" dataKey="AverageSalary" stroke="#8884d8" />
-      </LineChart>
-    </ResponsiveContainer>
+    <>
+      <div className="bg-white shadow-lg rounded-lg p-4">
+        <ResponsiveContainer width="100%" height={400}>
+          <LineChart data={data}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="Job_type" />
+            <YAxis />
+            <Tooltip />
+            <Line type="monotone" dataKey="AverageSalary" stroke="#8884d8" />
+          </LineChart>
+        </ResponsiveContainer>
+        <p className="text-[15px] text-gray-500">
+          This graph represents the average salary for different job types
+          related to the searched job title.
+        </p>
+      </div>
+    </>
   );
 }

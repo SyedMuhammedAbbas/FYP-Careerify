@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { BASEURL } from "../../../../../config";
-import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
+import {
+  PieChart,
+  Pie,
+  Cell,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
 
 export default function JobOpeningsByWebsiteAndTitle({ jobTitle }) {
   const [data, setData] = useState([]);
@@ -44,6 +51,7 @@ export default function JobOpeningsByWebsiteAndTitle({ jobTitle }) {
           ))}
         </Pie>
         <Tooltip />
+        <Legend />
       </PieChart>
     </ResponsiveContainer>
   );
