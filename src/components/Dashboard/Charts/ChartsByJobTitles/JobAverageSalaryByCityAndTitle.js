@@ -43,7 +43,7 @@ export default function JobAverageSalaryByCityAndTitle({ jobTitle }) {
             <Bar dataKey="AverageSalary" fill="#5edbc0" />
           </BarChart>
         </ResponsiveContainer>
-        <p className="text-[15px] text-gray-500">
+        <p className="flex justify-center text-[15px] text-gray-500">
           This graph displays the average salary for job openings in different
           cities for the searched job title.
         </p>

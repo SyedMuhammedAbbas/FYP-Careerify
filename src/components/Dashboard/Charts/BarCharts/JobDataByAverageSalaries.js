@@ -12,12 +12,12 @@ import {
 import axios from "axios";
 import { BASEURL } from "../../../../../config";
 
-const JobDataByCities = () => {
+const JobDataByAverageSalaries = () => {
   const [data, setData] = useState([]);
 
   const fetchData = useCallback(async () => {
     try {
-      const response = await axios.get(`${BASEURL}/bar/JobDataByCities`);
+      const response = await axios.get(`${BASEURL}/bar/getAverageSalaries`);
       const apiData = response.data;
 
       setData(apiData);
@@ -37,25 +37,22 @@ const JobDataByCities = () => {
         <ResponsiveContainer width="100%" height={400}>
           <BarChart data={data}>
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="City" />
+            <XAxis dataKey="Job_titles" />
             <YAxis />
             <Tooltip />
             <Legend />
-            <Bar dataKey="NumberOfJobs" fill="#8884d8" />
+            <Bar dataKey="Average_salary" fill="#8884d8" />
           </BarChart>
         </ResponsiveContainer>
         <p className="flex justify-center text-[15px] text-gray-500">
-          The graph visually presents the distribution of job data across
-          various cities within the IT industry. By examining the heights of the
-          bars, viewers can easily compare the number of jobs in different
-          cities, allowing them to identify cities with higher or lower job
-          counts. This representation aids in gaining insights into the
-          concentration of job opportunities across various cities in the IT
-          industry.
+          The graph represents the average salaries for different job titles.
+          Each job title is shown on the X-axis, and the corresponding average
+          salary is displayed on the Y-axis. The height of each bar indicates
+          the average salary for a specific job title.
         </p>
       </div>
     </>
   );
 };
 
-export default JobDataByCities;
+export default JobDataByAverageSalaries;

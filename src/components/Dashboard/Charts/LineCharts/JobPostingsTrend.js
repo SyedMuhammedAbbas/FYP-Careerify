@@ -31,8 +31,8 @@ const JobPostingsTrend = () => {
   }, []);
 
   return (
-    <div style={{ width: "100%", height: 400 }}>
-      <ResponsiveContainer>
+    <div className="bg-white shadow-lg rounded-lg p-4">
+      <ResponsiveContainer width="100%" height={400}>
         <LineChart
           // width={600}
           // height={400}
@@ -52,6 +52,12 @@ const JobPostingsTrend = () => {
           />
         </LineChart>
       </ResponsiveContainer>
+      <p className="flex justify-center text-[15px] text-gray-500">
+        The graph provides a visual representation of the changes in job
+        postings over time in the IT industry. By examining the trajectory of
+        the line, viewers can identify trends and patterns, including periods of
+        both growth and decline in job postings.
+      </p>
     </div>
   );
 };

@@ -40,10 +40,10 @@ export default function JobByAverageSalary({ jobTitle }) {
             <XAxis dataKey="Company_name" />
             <YAxis dataKey="AverageSalary" />
             <Tooltip cursor={{ strokeDasharray: "3 3" }} />
-            <Scatter name="Average Salary" data={data} fill="#8884d8" />
+            <Scatter name="Average Salary" data={data} fill="#c47131" />
           </ScatterChart>
         </ResponsiveContainer>
-        <p className="text-[15px] text-gray-500">
+        <p className="flex justify-center text-[15px] text-gray-500">
           This scatter plot represents the average salary for different
           companies offering jobs related to the searched job title.
         </p>

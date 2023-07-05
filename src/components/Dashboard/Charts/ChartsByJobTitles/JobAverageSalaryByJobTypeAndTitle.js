@@ -43,7 +43,7 @@ export default function JobAverageSalaryByJobTypeAndTitle({ jobTitle }) {
             <Line type="monotone" dataKey="AverageSalary" stroke="#8884d8" />
           </LineChart>
         </ResponsiveContainer>
-        <p className="text-[15px] text-gray-500">
+        <p className="flex justify-center text-[15px] text-gray-500">
           This graph represents the average salary for different job types
           related to the searched job title.
         </p>

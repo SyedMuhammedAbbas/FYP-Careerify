@@ -52,7 +52,7 @@ export default function JobByAverageSalaryByYearAndCompany({ jobTitle }) {
             ))}
           </LineChart>
         </ResponsiveContainer>
-        <p className="text-[15px] text-gray-500">
+        <p className="flex justify-center text-[15px] text-gray-500">
           The graph displays the average salary for different companies over
           multiple years based on a specific job title.
         </p>

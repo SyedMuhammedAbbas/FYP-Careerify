@@ -22,11 +22,16 @@ export default function Header() {
       icon: <AiOutlineHome />,
       name: "Dashboard",
     },
-    { pathname: "/trends", icon: <VscGraph />, name: "Trends" },
     { pathname: "/projection", icon: <BsGraphUp />, name: "Projection" },
   ];
 
   const [searchResult, setSearchResult] = useState();
+
+  // const router = useRouter();
+
+  const handleSearch = () => {
+    router.push(`/dashboard?search=${searchResult}`);
+  };
 
   return (
     <>
@@ -50,7 +55,10 @@ export default function Header() {
                   value={searchResult}
                   onChange={(e) => setSearchResult(e.target.value)}
                 />
-                <button className="rounded-[20px] flex justify-center text-[#6a6a6a] hover:text-orange-400 text-[20px] px-2">
+                <button
+                  onClick={() => handleSearch()}
+                  className="rounded-[20px] flex justify-center text-[#6a6a6a] hover:text-orange-400 text-[20px] px-2"
+                >
                   <BiSearch />
                 </button>
               </div>

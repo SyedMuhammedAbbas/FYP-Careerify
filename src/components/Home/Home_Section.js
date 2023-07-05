@@ -14,7 +14,7 @@ export default function Home_Section() {
   return (
     <>
       {/* <Header /> */}
-      <div className="overflow-x-hidden w-[100vw] grid">
+      <div className="overflow-x-hidden w-[100vw] grid ">
         <div className="flex flex-col relative min-h-screen">
           <div className="absolute top-0 left-0 w-full h-full z-[-1]">
             <img
@@ -36,6 +36,8 @@ export default function Home_Section() {
                   ],
                   autoStart: true,
                   loop: true,
+                  delay: 60, // Reduce the delay before typing each string
+                  deleteSpeed: 20, // Increase the delete speed for faster removal
                 }}
               />
             </div>

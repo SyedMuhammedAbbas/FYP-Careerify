@@ -48,7 +48,7 @@ export default function DurationOfJobPostingsByTitle({ jobTitle }) {
             />
           </AreaChart>
         </ResponsiveContainer>
-        <p className="text-[15px] text-gray-500">
+        <p className="flex justify-center text-[15px] text-gray-500">
           This graph shows the duration of job postings for the searched job
           title over time. The x-axis represents the month and year when the job
           was posted, while the y-axis represents the duration in days. The

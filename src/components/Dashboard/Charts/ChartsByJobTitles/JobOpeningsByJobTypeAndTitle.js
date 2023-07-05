@@ -68,9 +68,15 @@ export default function JobOpeningsByJobTypeAndTitle({ jobTitle }) {
             <Legend />
           </PieChart>
         </ResponsiveContainer>
-        <p className="text-[15px] text-gray-500">
-          The purpose of this visualization is to provide insights into the
-          average salary trends for different companies over multiple years.
+        <p className="flex justify-center text-[15px] text-gray-500">
+          The graph summarizes the job market for a specific job title by
+          showcasing the distribution of job openings across various job types.
+          It visualizes this information using a pie chart, where each slice
+          represents a different job type and its corresponding number of job
+          openings. The graph provides a quick and intuitive overview of the
+          most prevalent job types associated with the given job title and
+          offers insights into the composition of available job opportunities
+          within that field.
         </p>
       </div>
     </>

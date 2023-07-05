@@ -67,8 +67,8 @@ const JobDistributionByType = () => {
   const chartData = [...filteredData, otherEntry];
 
   return (
-    <div style={{ width: "100%", height: 300 }}>
-      <ResponsiveContainer>
+    <div className="bg-white shadow-lg rounded-lg p-4">
+      <ResponsiveContainer width="100%" height={300}>
         <PieChart>
           <Pie
             data={chartData}
@@ -91,6 +91,10 @@ const JobDistributionByType = () => {
           <Legend />
         </PieChart>
       </ResponsiveContainer>
+      <p className="flex justify-center text-[15px] text-gray-500">
+        graph provides a visual representation of the distribution of job types
+        in the IT industry
+      </p>
     </div>
   );
 };
