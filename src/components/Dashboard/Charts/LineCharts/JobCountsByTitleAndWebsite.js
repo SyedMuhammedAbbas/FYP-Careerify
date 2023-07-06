@@ -37,7 +37,7 @@ const JobCountsByTitleAndWebsite = () => {
       <ResponsiveContainer width="100%" height={400}>
         <LineChart data={data}>
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="Job_titles" />
+          <XAxis dataKey="Job_category" />
           <YAxis />
           <Tooltip />
           <Legend />

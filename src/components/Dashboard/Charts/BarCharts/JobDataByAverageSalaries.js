@@ -37,11 +37,11 @@ const JobDataByAverageSalaries = () => {
         <ResponsiveContainer width="100%" height={400}>
           <BarChart data={data}>
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="Job_titles" />
+            <XAxis dataKey="Job_category" />
             <YAxis />
             <Tooltip />
             <Legend />
-            <Bar dataKey="Average_salary" fill="#8884d8" />
+            <Bar dataKey="Average_salary" fill="#2d9677" />
           </BarChart>
         </ResponsiveContainer>
         <p className="flex justify-center text-[15px] text-gray-500">
