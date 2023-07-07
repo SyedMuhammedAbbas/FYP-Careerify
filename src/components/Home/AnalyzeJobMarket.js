@@ -1,40 +1,45 @@
 import Karachi_logo from "@/images/karachi_logo_orange.png";
 import sample1 from "@/images/sample1.jpg";
 import Image from "next/image";
+import pic1 from "@/images/analyzeJobMarket/1.jpg";
+import pic2 from "@/images/analyzeJobMarket/2.jpg";
+import pic3 from "@/images/analyzeJobMarket/3.jpg";
+import pic4 from "@/images/analyzeJobMarket/4.jpg";
+import pic5 from "@/images/analyzeJobMarket/5.jpg";
 
 export default function AnalyzeJobMarket() {
   const analyzeJob = [
     {
       id: 1,
-      imageName: sample1,
+      imageName: pic1,
       heading: "Unparalleled Insights",
       description:
         "Discover the power of Careerify as we provide you with unparalleled insights into the dynamic IT job market in Pakistan. Our carefully curated data, gathered from various job posting sites, allows you to gain a comprehensive understanding of the current trends and demands.",
     },
     {
       id: 2,
-      imageName: sample1,
+      imageName: pic2,
       heading: "Visualize Trends",
       description:
         "Experience the job market like never before through our intuitive graphs and visualizations. Careerify transforms complex data into easy-to-understand visuals, helping you identify emerging trends, popular technologies, and the most sought-after job roles.",
     },
     {
       id: 3,
-      imageName: sample1,
+      imageName: pic3,
       heading: "Informed Decision-making",
       description:
         "Careerify empowers you to make informed decisions about your career path. With our in-depth analysis, you can explore which areas of the IT industry are thriving, identify lucrative opportunities, and align your skills with the demands of the market.",
     },
     {
       id: 4,
-      imageName: sample1,
+      imageName: pic4,
       heading: "Stay Competitive",
       description:
         "Gain a competitive edge by staying informed about the latest developments in the IT job market. Careerify equips you with the knowledge to navigate the ever-changing landscape, allowing you to position yourself strategically and seize the best opportunities.",
     },
     {
       id: 5,
-      imageName: sample1,
+      imageName: pic5,
       heading: "Plan Your Future",
       description:
         "Let Careerify be your guide as you plan your future in the IT industry. Whether you're a student, a fresh graduate, or an experienced professional, our comprehensive data and insights help you chart a successful career path and make informed decisions at every stage.",
@@ -72,7 +77,7 @@ export default function AnalyzeJobMarket() {
                   src={item.imageName}
                   width={200}
                   height={200}
-                  className="w-[350px] h-[280px] rounded-[20px]"
+                  className="w-[350px] h-[280px] object-cover rounded-[20px]"
                 />
               </div>
               <div className="grid w-[400px]">

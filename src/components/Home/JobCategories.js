@@ -5,6 +5,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import { BASEURL } from "../../../config";
 import PopUp from "../Common/PopUp";
+import PopUp1 from "../Common/PopUp1";
 
 export default function JobCategories() {
   // const [companyName, setcompanyName] = useState([]);
@@ -179,14 +180,14 @@ export default function JobCategories() {
                       </li>
                     ))}
                   </ul>
-                  {openPopUp && (
-                    <PopUp
-                      jobTitle={jobName}
-                      jobType={null}
-                      city={null}
-                      setOpenPopUp={setOpenPopUp}
-                    />
-                  )}
+
+                  <PopUp1
+                    jobTitle={jobName}
+                    jobType={null}
+                    city={null}
+                    openPopUp={openPopUp}
+                    setOpenPopUp={setOpenPopUp}
+                  />
                 </>
               ) : citiesFlag ? (
                 <>
@@ -202,14 +203,13 @@ export default function JobCategories() {
                       </li>
                     ))}
                   </ul>
-                  {openPopUp && (
-                    <PopUp
-                      city={city}
-                      jobTitle={null}
-                      jobType={null}
-                      setOpenPopUp={setOpenPopUp}
-                    />
-                  )}
+                  <PopUp1
+                    city={city}
+                    jobTitle={null}
+                    jobType={null}
+                    openPopUp={openPopUp}
+                    setOpenPopUp={setOpenPopUp}
+                  />
                 </>
               ) : jobTypeFlag ? (
                 <ul className="flex flex-wrap gap-6 justify-center">

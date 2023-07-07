@@ -41,12 +41,13 @@ export default function Home_Section() {
                 }}
               />
             </div>
+            <div className="grid justify-center gap-1">
+              <JobCategories />
+            </div>
           </div>
         </div>
       </div>
-      <div className="grid justify-center gap-1">
-        <JobCategories />
-      </div>
+
       <AnalyzeJobMarket />
 
       <JobTrendingCities />
