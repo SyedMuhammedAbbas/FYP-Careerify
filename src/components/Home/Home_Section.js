@@ -15,7 +15,7 @@ export default function Home_Section() {
     <>
       {/* <Header /> */}
       <div className="overflow-x-hidden w-[100vw] grid ">
-        <div className="flex flex-col relative min-h-screen">
+        <div className="flex flex-col relative">
           <div className="absolute top-0 left-0 w-full h-full z-[-1]">
             <img
               src={bgCover.src}
@@ -41,14 +41,12 @@ export default function Home_Section() {
                 }}
               />
             </div>
-
-            <div className="grid justify-center gap-1">
-              <JobCategories />
-            </div>
           </div>
         </div>
       </div>
-
+      <div className="grid justify-center gap-1">
+        <JobCategories />
+      </div>
       <AnalyzeJobMarket />
 
       <JobTrendingCities />

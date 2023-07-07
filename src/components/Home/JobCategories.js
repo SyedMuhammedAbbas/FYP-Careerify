@@ -4,22 +4,44 @@ import { MdScreenSearchDesktop } from "react-icons/md";
 import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import { BASEURL } from "../../../config";
+import PopUp from "../Common/PopUp";
 
 export default function JobCategories() {
-  const [companyName, setcompanyName] = useState([]);
+  // const [companyName, setcompanyName] = useState([]);
   const [cityNames, setCityNames] = useState([]);
   const [jobTypes, setJobTypes] = useState([]);
 
-  const fetchCompanyData = useCallback(async () => {
-    try {
-      const response = await axios.get(`${BASEURL}/jobs/uniqueCompanyNames`);
-      const apiData = response.data;
+  const jobTitles = [
+    "Wordpress Developer",
+    "Data Scientist",
+    "Data Analyst",
+    "UI / UX designer",
+    "React developer",
+    "Pyhton developer",
+    "Java Developer",
+    "Full Stack developer",
+    "Mern Stack developer",
+    "Data Enigneer",
+    "Front-end developer",
+    "Back-end developer",
+    "SQA Enigneer",
+    "Project Manager",
+    "Power Bi developer",
+    "ios developer",
+    "android developer",
+    "SEO",
+  ];
 
-      setcompanyName(apiData);
-    } catch (error) {
-      console.log(error.message);
-    }
-  }, []);
+  // const fetchCompanyData = useCallback(async () => {
+  //   try {
+  //     const response = await axios.get(`${BASEURL}/jobs/uniqueCompanyNames`);
+  //     const apiData = response.data;
+
+  //     setcompanyName(apiData);
+  //   } catch (error) {
+  //     console.log(error.message);
+  //   }
+  // }, []);
 
   const fetchCitiesData = useCallback(async () => {
     try {
@@ -43,13 +65,13 @@ export default function JobCategories() {
     }
   }, []);
 
-  console.log(companyName);
+  // console.log(companyName);
   console.log(cityNames);
   useEffect(() => {
-    fetchCompanyData();
+    // fetchCompanyData();
     fetchCitiesData();
     fetchJobTypeData();
-  }, [fetchCompanyData, fetchCitiesData, fetchJobTypeData]);
+  }, [fetchCitiesData, fetchJobTypeData]);
 
   const [companyFlag, setCompanyFlag] = useState(true);
   const [citiesFlag, setCitiesFlag] = useState(false);
@@ -77,6 +99,21 @@ export default function JobCategories() {
     }
     setCitiesFlag(false);
     setCompanyFlag(false);
+  };
+
+  const [openPopUp, setOpenPopUp] = useState(false);
+  const [city, setCity] = useState();
+  const [jobType, setJobType] = useState();
+  const [jobName, setJobName] = useState();
+
+  const handleCityPopUp = (cityName) => {
+    setOpenPopUp(openPopUp !== true);
+    setCity(cityName);
+  };
+
+  const handleJobTitlePopUp = (job) => {
+    setOpenPopUp(openPopUp !== true);
+    setJobName(job);
   };
 
   return (
@@ -130,27 +167,50 @@ export default function JobCategories() {
 
             <div className="pt-10 h-[300px] overflow-y-auto flex justify-center">
               {companyFlag ? (
-                <ul className="flex flex-wrap gap-6 justify-center">
-                  {companyName.map((title, index) => (
-                    <li
-                      key={index}
-                      className="cursor-pointer text-[#ffffff] hover:underline text-center"
-                    >
-                      {title.Company_name}
-                    </li>
-                  ))}
-                </ul>
+                <>
+                  <ul className="flex flex-wrap gap-6 justify-center">
+                    {jobTitles.map((title, index) => (
+                      <li
+                        key={index}
+                        onClick={() => handleJobTitlePopUp(title)}
+                        className="cursor-pointer text-[#ffffff] hover:underline text-center"
+                      >
+                        {title}
+                      </li>
+                    ))}
+                  </ul>
+                  {openPopUp && (
+                    <PopUp
+                      jobTitle={jobName}
+                      jobType={null}
+                      city={null}
+                      setOpenPopUp={setOpenPopUp}
+                    />
+                  )}
+                </>
               ) : citiesFlag ? (
-                <ul className="flex flex-wrap gap-6 justify-center">
-                  {cityNames.map((title, index) => (
-                    <li
-                      key={index}
-                      className="cursor-pointer text-[#ffffff] hover:underline text-center"
-                    >
-                      {title.City}
-                    </li>
-                  ))}
-                </ul>
+                <>
+                  {" "}
+                  <ul className="flex flex-wrap gap-6 justify-center">
+                    {cityNames.map((title, index) => (
+                      <li
+                        key={index}
+                        onClick={() => handleCityPopUp(title.City)}
+                        className="cursor-pointer text-[#ffffff] hover:underline text-center"
+                      >
+                        {title.City}
+                      </li>
+                    ))}
+                  </ul>
+                  {openPopUp && (
+                    <PopUp
+                      city={city}
+                      jobTitle={null}
+                      jobType={null}
+                      setOpenPopUp={setOpenPopUp}
+                    />
+                  )}
+                </>
               ) : jobTypeFlag ? (
                 <ul className="flex flex-wrap gap-6 justify-center">
                   {jobTypes.map((title, index) => (
