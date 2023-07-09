@@ -15,7 +15,7 @@ export default function Sidebar() {
 
   const sidebarPages = [
     { path: "/dashboard", heading: "Dashboard", icon: <AiOutlineHome /> },
-    { path: "/trends", heading: "Trends", icon: <VscGraph /> },
+    // { path: "/trends", heading: "Trends", icon: <VscGraph /> },
     { path: "/projection", heading: "Projection", icon: <BsGraphUp /> },
     { path: "/about", heading: "About Us", icon: <BsPeopleFill /> },
     { path: "/contact", heading: "Contact Us", icon: <TiContacts /> },

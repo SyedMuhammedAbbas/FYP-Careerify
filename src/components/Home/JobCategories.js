@@ -117,6 +117,11 @@ export default function JobCategories() {
     setJobName(job);
   };
 
+  const handlejobTypePopup = (job) => {
+    setOpenPopUp(openPopUp !== true);
+    setJobType(job);
+  };
+
   return (
     <>
       <div className="flex justify-center p-10 mx-[20%]">
@@ -212,16 +217,26 @@ export default function JobCategories() {
                   />
                 </>
               ) : jobTypeFlag ? (
-                <ul className="flex flex-wrap gap-6 justify-center">
-                  {jobTypes.map((title, index) => (
-                    <li
-                      key={index}
-                      className="cursor-pointer text-[#ffffff] hover:underline text-center"
-                    >
-                      {title.Job_type}
-                    </li>
-                  ))}
-                </ul>
+                <>
+                  <ul className="flex flex-wrap gap-6 justify-center">
+                    {jobTypes.map((title, index) => (
+                      <li
+                        key={index}
+                        onClick={() => handlejobTypePopup(title.Job_type)}
+                        className="cursor-pointer text-[#ffffff] hover:underline text-center"
+                      >
+                        {title.Job_type}
+                      </li>
+                    ))}
+                  </ul>
+                  <PopUp1
+                    city={null}
+                    jobTitle={null}
+                    jobType={jobType}
+                    openPopUp={openPopUp}
+                    setOpenPopUp={setOpenPopUp}
+                  />
+                </>
               ) : (
                 ""
               )}

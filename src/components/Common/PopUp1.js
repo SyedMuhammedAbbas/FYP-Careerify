@@ -1,20 +1,20 @@
 import React from "react";
 import {
-  Button,
+  // Button,
   Dialog,
   DialogHeader,
   DialogBody,
-  DialogFooter,
+  // DialogFooter,
   IconButton,
-  Typography,
-  MenuItem,
+  // Typography,
+  // MenuItem,
 } from "@material-tailwind/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import JobPostingByCompanyWithinCityChart from "./Graphs/CityBasedGraphs/JobPostingByCompanyWithinCityChart";
 import JobPostingsComparisonChart from "./Graphs/CityBasedGraphs/JobPostingsComparisonChart";
 import JobsOverTimeForACityChart from "./Graphs/CityBasedGraphs/JobsOverTimeForACityChart";
 import SalaryRangeScatterPlot from "./Graphs/CityBasedGraphs/SalaryRangeScatterPlot";
-import { MdOutlineCancel } from "react-icons/md";
+// import { MdOutlineCancel } from "react-icons/md";
 
 // JobTitle
 import DurationOfJobPostingsByTitle from "../Dashboard/Charts/ChartsByJobTitles/DurationOfJobPostingsByTitle";
@@ -29,6 +29,15 @@ import JobOpeningsByCompanyAndTitle from "../Dashboard/Charts/ChartsByJobTitles/
 import JobOpeningsByDateAndTitle from "../Dashboard/Charts/ChartsByJobTitles/JobOpeningsByDateAndTitle";
 import JobOpeningsByJobTypeAndTitle from "../Dashboard/Charts/ChartsByJobTitles/JobOpeningsByJobTypeAndTitle";
 import JobOpeningsByWebsiteAndTitle from "../Dashboard/Charts/ChartsByJobTitles/JobOpeningsByWebsiteAndTitle";
+
+// JobType
+import JobAttributesByCityGraph from "./Graphs/JobTypeGraphs/JobAttributesByCityGraph";
+import JobCountByCityGraph from "./Graphs/JobTypeGraphs/JobCountByCityGraph";
+import JobCountByCompanyGraph from "./Graphs/JobTypeGraphs/JobCountByCompanyGraph";
+import JobListingsTrendGraph from "./Graphs/JobTypeGraphs/JobListingsTrendGraph";
+import SalaryRangeByCityGraph from "./Graphs/JobTypeGraphs/SalaryRangeByCityGraph";
+import SalaryRangeByCompanyGraph from "./Graphs/JobTypeGraphs/SalaryRangeByCompanyGraph";
+import SalaryRangeTrendGraph from "./Graphs/JobTypeGraphs/SalaryRangeTrendGraph";
 
 export default function PopUp1({
   city,
@@ -111,6 +120,30 @@ export default function PopUp1({
                 </div>
                 <div className=" w-2/4 px-4">
                   <JobOpeningsByWebsiteAndTitle jobTitle={jobTitle} />
+                </div>
+              </div>
+            ) : !city && !jobTitle && jobType ? (
+              <div className=" flex flex-wrap space-y-4">
+                <div className=" w-2/4  px-4">
+                  <JobAttributesByCityGraph jobType={jobType} />
+                </div>
+                <div className=" w-2/4 px-4">
+                  <JobCountByCityGraph jobType={jobType} />
+                </div>
+                <div className=" w-2/4 px-4">
+                  <JobCountByCompanyGraph jobType={jobType} />
+                </div>
+                <div className=" w-2/4 px-4">
+                  <JobListingsTrendGraph jobType={jobType} />
+                </div>
+                <div className=" w-2/4 px-4">
+                  <SalaryRangeByCityGraph jobType={jobType} />
+                </div>
+                <div className=" w-2/4 px-4">
+                  <SalaryRangeByCompanyGraph jobType={jobType} />
+                </div>
+                <div className=" w-2/4 px-4">
+                  <SalaryRangeTrendGraph jobType={jobType} />
                 </div>
               </div>
             ) : (
