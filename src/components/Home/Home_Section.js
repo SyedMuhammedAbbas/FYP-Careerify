@@ -8,13 +8,24 @@ import "@fontsource/roboto";
 import AnalyzeJobMarket from "./AnalyzeJobMarket";
 import JobTrendingCities from "./JobTrendingCities";
 import JobCategories from "./JobCategories";
-import bgCover from "../../images/bg_cover_2.jpg";
+import bgCover from "../../images/home-banner-02.png";
+import { useState } from "react";
+import { BiSearch } from "react-icons/bi";
+import Teams from "./Team";
 
 export default function Home_Section() {
+  const [searchResult, setSearchResult] = useState();
+
+  // const router = useRouter();
+
+  const handleSearch = () => {
+    router.push(`/dashboard?search=${searchResult}`);
+  };
+
   return (
-    <>
+    <div className="flex flex-col">
       {/* <Header /> */}
-      <div className="overflow-x-hidden w-[100vw] grid ">
+      <div className="overflow-x-hidden relative overflow-y-hidden h-auto grid ">
         <div className="flex flex-col relative">
           <div className="absolute top-0 left-0 w-full h-full z-[-1]">
             <img
@@ -24,7 +35,7 @@ export default function Home_Section() {
             />
           </div>
 
-          <div className="flex flex-col items-center justify-center pt-[10%] bg-opacity-40 backdrop-blur-lg text-white bg-black min-h-screen">
+          <div className="flex flex-col gap-10 items-center justify-center text-white min-h-screen">
             <div className="text-2xl leading-[50px] font-montserrat text-[35px] font-extrabold text-white  w-1/2 flex justify-start min-h-[150px] max-h-[100%]">
               <Typewriter
                 options={{
@@ -41,17 +52,34 @@ export default function Home_Section() {
                 }}
               />
             </div>
-            <div className="grid justify-center gap-1">
-              <JobCategories />
+
+            <div className="bg-[#e5e5e5] flex items-center shadow-xl rounded-[5px] w-[700px] h-[60px]">
+              <button
+                onClick={() => handleSearch()}
+                className="rounded-[10px] flex justify-center shadow-xl bg-[#F15A24] hover:scale-105 transition-all ease-in-out text-[#ffffff] text-[40px] p-5"
+              >
+                <BiSearch />
+              </button>
+
+              <input
+                className="bg-transparent outline-none w-[700px] h-[60px] placeholder:text-[20px] placeholder:text-[#6a6a6a] px-5 text-[20px] text-[#000000]"
+                placeholder="Search..."
+                value={searchResult}
+                onChange={(e) => setSearchResult(e.target.value)}
+              />
             </div>
           </div>
         </div>
+        <div className="grid  mt-[-250px] justify-center gap-1">
+          <JobCategories />
+        </div>
       </div>
-
-      <AnalyzeJobMarket />
-
+      <div className="">
+        <AnalyzeJobMarket />
+      </div>
       <JobTrendingCities />
+      <Teams />
       <Footer />
-    </>
+    </div>
   );
 }

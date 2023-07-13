@@ -1,16 +1,16 @@
 import Logo from "../../images/logo_white.png";
 import Image from "next/image";
-import { BsFacebook } from "react-icons/bs";
-import { AiFillTwitterCircle } from "react-icons/ai";
-import { AiFillLinkedin } from "react-icons/ai";
+import { ImFacebook } from "react-icons/im";
+import { IoLogoInstagram } from "react-icons/io";
+import { FaLinkedinIn } from "react-icons/fa";
 
 export default function Footer() {
   return (
     <>
-      <div className="bg-[#2A2A2A] w-[100vw] bg-opacity-90">
-        <footer className="bg-[#000000] flex bg-opacity-30 py-8">
+      <div className="bg-[#1F1B24] w-[100vw]">
+        <footer className="bg-[#1F1B24] flex py-8">
           {/* <div className=""> */}
-          <div className="flex w-[100vw] h-auto p-10 flex-wrap relative">
+          <div className="flex justify-center items-center w-[100vw] h-auto p-10 flex-wrap relative">
             <div className="grid">
               <div className="flex ">
                 <Image
@@ -18,23 +18,12 @@ export default function Footer() {
                   alt="logo"
                   width={400}
                   height={150}
-                  className="w-[150px] h-[35px]"
+                  className="w-[250px] h-[55px]"
                 />
-              </div>
-              <div className="flex gap-4 justify-center">
-                <div className="text-[27px] cursor-pointer text-[#4267B2]">
-                  <BsFacebook />
-                </div>
-                <div className="text-[30px] cursor-pointer text-[#1DA1F2]">
-                  <AiFillTwitterCircle />
-                </div>
-                <div className="text-[30px] cursor-pointer text-[#0077B5]">
-                  <AiFillLinkedin />
-                </div>
               </div>
             </div>
           </div>
-          <div className="flex w-full">
+          {/* <div className="flex w-full">
             <div className="w-auto pr-10 flex gap-5 px-4 mb-8 md:mb-0 ">
               <div className="p-5 w-[400px]">
                 <h2 className="font-bold text-[#F15A24] uppercase mb-4">
@@ -64,15 +53,32 @@ export default function Footer() {
                 </ul>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* </div> */}
         </footer>
-        <div className="flex items-center w-full gap-4 text-center py-4 justify-center">
-          <div className="text-[#ffffff]">careerify . </div>
-          <p className="text-[#ffffff]">
-            All rights reserved. © {new Date().getFullYear()}
-          </p>
+
+        <div className="flex justify-center">
+          <div className="flex items-center w-[80vw] h-[50px] rounded-lg bg-[#F15A24] gap-4 text-center py-4 relative">
+            <div className="flex gap-6 justify-center items-center pl-10">
+              <div className="bg-[#ffffff] rounded-[50%] bg-opacity-10 shadow-xl p-2 text-[20px] cursor-pointer text-[#ffffff]">
+                <ImFacebook />
+              </div>
+              <div className="bg-[#ffffff] rounded-[50%] bg-opacity-10 shadow-xl p-2 text-[20px] cursor-pointer text-[#ffffff]">
+                <IoLogoInstagram />
+              </div>
+              <div className="bg-[#ffffff] rounded-[50%] bg-opacity-10 shadow-xl p-2 text-[20px] cursor-pointer text-[#ffffff]">
+                <FaLinkedinIn />
+              </div>
+            </div>
+
+            <div className="flex justify-center absolute right-7 items-center font-semibold gap-4 font-montserrat">
+              <div className="text-[#ffffff]">Careerify . </div>
+              <p className="text-[#ffffff]">
+                All rights reserved. © {new Date().getFullYear()}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </>

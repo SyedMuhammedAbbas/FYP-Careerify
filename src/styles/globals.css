@@ -13,3 +13,44 @@ body {
   /* background-color: #272727; */
   background-color: #ffffff;
 }
+
+.custom-shape-divider-top-1689285966 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1689285966 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 146px;
+}
+
+.custom-shape-divider-top-1689285966 .shape-fill {
+  fill: #ffffff;
+}
+
+.custom-shape-divider-bottom-1689289383 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1689289383 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 146px;
+}
+
+.custom-shape-divider-bottom-1689289383 .shape-fill {
+  fill: #ffffff;
+}

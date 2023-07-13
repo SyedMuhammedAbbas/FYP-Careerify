@@ -6,7 +6,9 @@ export default function Layout({ children }) {
   return (
     <>
       <div>
-        <Header />
+        <div className="flex justify-center">
+          <Header />
+        </div>
         <Sidebar />
         {children}
         {/* <Footer /> */}

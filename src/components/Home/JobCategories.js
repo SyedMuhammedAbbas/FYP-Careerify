@@ -124,30 +124,30 @@ export default function JobCategories() {
 
   return (
     <>
-      <div className="flex justify-center p-10 mx-[20%]">
-        <div className="bg-[#3e3e3e] bg-opacity-[0.85] backdrop-blur-[20px] flex justify-center rounded-[20px] min-w-[70vw] max-w-[100%] h-[400px] p-10 px-10">
+      <div className="flex justify-center p-10 mx-[20%] ">
+        <div className="bg-[#1F1B24] bg-opacity-90 border-[5px] border-[#ffffff] backdrop-blur-[20px] flex justify-center rounded-[20px] min-w-[70vw] max-w-[100%] h-[400px] p-10 px-10">
           <div className="">
             <div className="flex h-[50px] overflow-x-auto mx-20 justify-center gap-20 border-b-[2px] border-[#a6a6a6]">
               <div
                 onClick={() => handleCompanyFlag()}
-                className={`flex gap-2 justify-center w-[200px]  cursor-pointer  font-bold text-[18px] text-[#c37b61] hover:font-bold hover:text-[#F15A24] hover:border-b-[4px] hover:border-[#F15A24] ${
+                className={`flex gap-2 justify-center w-[200px]  cursor-pointer  font-bold text-[18px]  hover:font-bold hover:text-[#F15A24]   ${
                   companyFlag
-                    ? "text-[#F15A24] border-b-[4px] border-[#F15A24]"
-                    : ""
+                    ? "text-[#F15A24] font-bold border-b-[4px] border-[#F15A24]"
+                    : "text-[#c37b61]"
                 }`}
               >
                 <div className="mt-1">
                   <BsBuilding />
                 </div>
-                <div>Jobs by Company</div>
+                <div>Jobs by Title</div>
               </div>
 
               <div
                 onClick={() => handleCitiesFlag()}
-                className={`flex gap-2 justify-center w-[200px]  cursor-pointer text-[#c37b61] hover:font-bold text-[18px] hover:text-[#F15A24] hover:border-b-[4px] hover:border-[#F15A24] ${
+                className={`flex gap-2 justify-center w-[200px]  cursor-pointer  hover:font-bold text-[18px] hover:text-[#F15A24]   ${
                   citiesFlag
-                    ? "text-[#F15A24] border-b-[4px] border-[#F15A24]"
-                    : ""
+                    ? "text-[#F15A24] font-bold border-b-[4px] border-[#F15A24]"
+                    : "text-[#c37b61]"
                 }`}
               >
                 <div className="mt-1">
@@ -158,10 +158,10 @@ export default function JobCategories() {
 
               <div
                 onClick={() => handlejobTypeFlag()}
-                className={`flex gap-2 justify-center w-[200px]  cursor-pointer text-[#c37b61] hover:font-bold text-[18px] hover:text-[#F15A24] hover:border-b-[4px] hover:border-[#F15A24] ${
+                className={`flex gap-2 justify-center w-[200px]  cursor-pointer  hover:font-bold text-[18px] hover:text-[#F15A24]   ${
                   jobTypeFlag
-                    ? "text-[#F15A24] border-b-[4px] border-[#F15A24]"
-                    : ""
+                    ? "text-[#F15A24] font-bold border-b-[4px] border-[#F15A24]"
+                    : "text-[#c37b61]"
                 }`}
               >
                 <div className="mt-1">
