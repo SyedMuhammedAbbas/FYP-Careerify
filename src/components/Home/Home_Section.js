@@ -12,8 +12,11 @@ import bgCover from "../../images/home-banner-02.png";
 import { useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import Teams from "./Team";
+import { useRouter } from "next/router";
 
 export default function Home_Section() {
+  const router = useRouter();
+
   const [searchResult, setSearchResult] = useState();
 
   // const router = useRouter();
@@ -68,6 +71,27 @@ export default function Home_Section() {
                 onChange={(e) => setSearchResult(e.target.value)}
               />
             </div>
+
+            {/* <div className="cover">
+              <form method="get" action="">
+                <div className="tb">
+                  <div className="td">
+                    <input
+                      type="text"
+                      placeholder="Search"
+                      className="placeholder:font-montserrat font-montserrat"
+                      required
+                    />
+                  </div>
+                  <div className="td s-cover">
+                    <button type="submit">
+                      <div className="s-circle"></div>
+                      <span></span>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div> */}
           </div>
         </div>
         <div className="grid  mt-[-250px] justify-center gap-1">
