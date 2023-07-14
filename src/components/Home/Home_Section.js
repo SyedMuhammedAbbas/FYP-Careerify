@@ -38,7 +38,7 @@ export default function Home_Section() {
             />
           </div>
 
-          <div className="flex flex-col gap-10 items-center justify-center text-white min-h-screen">
+          <div className="flex flex-col gap-10 pb-[5%] items-center justify-center text-white min-h-screen">
             <div className="text-2xl leading-[50px] font-montserrat text-[35px] font-extrabold text-white  w-1/2 flex justify-start min-h-[150px] max-h-[100%]">
               <Typewriter
                 options={{

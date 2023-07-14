@@ -125,7 +125,7 @@ export default function JobCategories() {
   return (
     <>
       <div className="flex justify-center p-10 mx-[20%] ">
-        <div className="bg-[#1F1B24] bg-opacity-90 border-[5px] border-[#ffffff] backdrop-blur-[20px] flex justify-center rounded-[20px] min-w-[70vw] max-w-[100%] h-[400px] p-10 px-10">
+        <div className="bg-[#1F1B24] bg-opacity-90 border-[2px] border-[#ffffff] backdrop-blur-[20px] flex justify-center rounded-[20px] min-w-[70vw] max-w-[100%] h-[400px] p-10 px-10">
           <div className="">
             <div className="flex h-[50px] overflow-x-auto mx-20 justify-center gap-20 border-b-[2px] border-[#a6a6a6]">
               <div
