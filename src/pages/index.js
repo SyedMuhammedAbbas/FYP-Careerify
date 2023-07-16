@@ -27,7 +27,7 @@ export default function Home() {
         />
       </Head>
 
-      <div>
+      <div className="gradient overflow-x-hidden">
         <HomePage />
       </div>
     </>

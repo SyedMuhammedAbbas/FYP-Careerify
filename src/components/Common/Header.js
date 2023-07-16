@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { BiSearch } from "react-icons/bi";
 import logo from "@/images/logo_white.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Header() {
   const router = useRouter();
@@ -30,20 +30,52 @@ export default function Header() {
     { pathname: "/projection", icon: <BsGraphUp />, name: "Projection" },
   ];
 
-  const [searchResult, setSearchResult] = useState();
+  // const [searchResult, setSearchResult] = useState();
 
-  // const router = useRouter();
+  // // const router = useRouter();
 
-  const handleSearch = () => {
-    router.push(`/dashboard?search=${searchResult}`);
+  // const handleSearch = () => {
+  //   router.push(`/dashboard?search=${searchResult}`);
+  // };
+  const [show, setShow] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const controlNavbar = () => {
+    if (typeof window !== "undefined") {
+      if (window.scrollY > lastScrollY) {
+        // if scroll down hide the navbar
+        setShow(false);
+      } else {
+        // if scroll up show the navbar
+        setShow(true);
+      }
+
+      // remember current page location to use in the next move
+      setLastScrollY(window.scrollY);
+    }
   };
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", controlNavbar);
+
+      // cleanup function
+      return () => {
+        window.removeEventListener("scroll", controlNavbar);
+      };
+    }
+  }, [lastScrollY]);
 
   return (
     <>
       {pathname === "/" ? (
         // <div className="w-[100vw] fixed flex z-10 h-[50px] shadow-none justify-center backdrop-blur-lg">
-        <div className="fixed flex z-20 m-5 p-5 items-center rounded-lg shadow-md top-0 w-[80vw] h-[60px] md:h-[70px] xl:h-[80px] bg-[#1F1B24] bg-opacity-90 backdrop-blur-xl">
-          <div className="flex relative  w-[80vw] h-[60px] md:h-[70px] xl:h-[80px]">
+        <div
+          className={`fixed flex z-40 m-5 p-5 items-center rounded-lg shadow-md transition-all delay-200 ease-in-out ${
+            show ? "top-0" : "-top-28"
+          } w-[80vw] h-[80px] bg-[#1F1B24] bg-opacity-90 backdrop-blur-xl`}
+        >
+          <div className="flex relative  w-[80vw] h-[80px]">
             <div className="flex items-center">
               <Image
                 src={logo}
@@ -54,21 +86,6 @@ export default function Header() {
             </div>
 
             <div className="flex absolute right-10 py-6 gap-7 items-center">
-              {/* <div className="bg-[#e5e5e5] flex items-center rounded-[20px] w-[235px] h-[30px]">
-                <input
-                  className="bg-transparent outline-none w-[200px] h-[25px] placeholder:text-[20px] placeholder:text-[#6a6a6a] pl-5 text-[20px] text-[#000000]"
-                  placeholder="Search..."
-                  value={searchResult}
-                  onChange={(e) => setSearchResult(e.target.value)}
-                />
-                <button
-                  onClick={() => handleSearch()}
-                  className="rounded-[20px] flex justify-center text-[#6a6a6a] hover:text-orange-400 text-[20px] px-2"
-                >
-                  <BiSearch />
-                </button>
-              </div> */}
-
               {pages.map((item, index) => {
                 return (
                   <>
@@ -90,11 +107,9 @@ export default function Header() {
                       </div>
                     </Link>
 
-                    {item.pathname !== "/" &&
-                      item.name !== "Home" &&
-                      pages.length - 1 !== index && (
-                        <div className="border-r h-6 border-[#8b8b8b]"></div>
-                      )}
+                    {pages.length - 1 !== index && (
+                      <div className="border-r h-6 border-[#8b8b8b]"></div>
+                    )}
                   </>
                 );
               })}

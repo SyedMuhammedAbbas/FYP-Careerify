@@ -8,11 +8,12 @@ import "@fontsource/roboto";
 import AnalyzeJobMarket from "./AnalyzeJobMarket";
 import JobTrendingCities from "./JobTrendingCities";
 import JobCategories from "./JobCategories";
-import bgCover from "../../images/home-banner-02.png";
+import bgCover from "../../images/bannerrrr.png";
 import { useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import Teams from "./Team";
 import { useRouter } from "next/router";
+import bgGrad from "../../images/bg-grad.png";
 
 export default function Home_Section() {
   const router = useRouter();
@@ -26,84 +27,79 @@ export default function Home_Section() {
   };
 
   return (
-    <div className="flex flex-col">
-      {/* <Header /> */}
-      <div className="overflow-x-hidden relative overflow-y-hidden h-auto grid ">
-        <div className="flex flex-col relative">
-          <div className="absolute top-0 left-0 w-full h-full z-[-1]">
-            <img
-              src={bgCover.src}
-              alt="Background"
-              className="object-cover w-full h-full filter blur-sm"
-            />
-          </div>
+    <div className="">
+      <div className="flex flex-col justify-center">
+        {/* <Header /> */}
+        <div className="flex justify-center">
+          <div className="relative h-[70vh] w-[100vw] mt-[10%] flex justify-center items-center">
+            <div className="flex flex-row w-[100vw] h-[80vh]  gap-20 justify-center relative ">
+              <div className="flex flex-col w-1/2 items-center justify-center text-white">
+                <div className="text-2xl leading-[50px] font-montserrat text-[35px] font-extrabold text-white  w-[400px] flex justify-start h-[300px] ">
+                  <Typewriter
+                    options={{
+                      strings: [
+                        "Welcome to Careerify, your ultimate guide to Pakistan's IT job landscape.",
+                        "Discover real-time insights and trends in the dynamic tech industry.",
+                        "Witness the surging demand for IT professionals and explore transformative opportunities.",
+                        "Let Careerify empower your career choices with data-driven wisdom.",
+                      ],
+                      autoStart: true,
+                      loop: true,
+                      delay: 60, // Reduce the delay before typing each string
+                      deleteSpeed: 20, // Increase the delete speed for faster removal
+                    }}
+                  />
+                </div>
 
-          <div className="flex flex-col gap-10 pb-[5%] items-center justify-center text-white min-h-screen">
-            <div className="text-2xl leading-[50px] font-montserrat text-[35px] font-extrabold text-white  w-1/2 flex justify-start min-h-[150px] max-h-[100%]">
-              <Typewriter
-                options={{
-                  strings: [
-                    "Welcome to Careerify, your ultimate guide to the evolving IT job landscape in Pakistan.",
-                    "Explore the dynamic pulse of the tech industry as we provide real-time insights and trends.",
-                    "Witness the growth and transformation of opportunities as the demand for IT professionals surges across the country.",
-                    "Join us on this enlightening journey of discovery and let Careerify empower your career choices with data-driven wisdom.",
-                  ],
-                  autoStart: true,
-                  loop: true,
-                  delay: 60, // Reduce the delay before typing each string
-                  deleteSpeed: 20, // Increase the delete speed for faster removal
-                }}
-              />
-            </div>
+                <div className="bg-transparent flex items-center shadow-xl rounded-[40px] border-[2px] border-[#F15A24] w-[400px] h-[50px]">
+                  <input
+                    className="bg-transparent outline-none w-[348px] h-[50px] placeholder:text-[20px] placeholder:text-[#e4e4e4] font-montserrat px-5 text-[25px] text-[#ffffff]"
+                    placeholder="Search..."
+                    value={searchResult}
+                    onChange={(e) => setSearchResult(e.target.value)}
+                  />
 
-            <div className="bg-[#e5e5e5] flex items-center shadow-xl rounded-[5px] w-[700px] h-[60px]">
-              <button
-                onClick={() => handleSearch()}
-                className="rounded-[10px] flex justify-center shadow-xl bg-[#F15A24] hover:scale-105 transition-all ease-in-out text-[#ffffff] text-[40px] p-5"
-              >
-                <BiSearch />
-              </button>
+                  <button
+                    onClick={() => handleSearch()}
+                    className="rounded-r-[40px] rounded-l-[5px] flex justify-center shadow-xl bg-[#F15A24] items-center h-[40px] w-[45px] transition-all ease-in-out text-[#000000] text-[25px] font-semibold p-1"
+                  >
+                    <BiSearch />
+                  </button>
+                </div>
+              </div>
 
-              <input
-                className="bg-transparent outline-none w-[700px] h-[60px] placeholder:text-[20px] placeholder:text-[#6a6a6a] px-5 text-[20px] text-[#000000]"
-                placeholder="Search..."
-                value={searchResult}
-                onChange={(e) => setSearchResult(e.target.value)}
-              />
-            </div>
-
-            {/* <div className="cover">
-              <form method="get" action="">
-                <div className="tb">
-                  <div className="td">
-                    <input
-                      type="text"
-                      placeholder="Search"
-                      className="placeholder:font-montserrat font-montserrat"
-                      required
+              <div className=" flex relative w-1/2 justify-center items-center xl2:hidden">
+                <div
+                  className="elementor-element elementor-element-0ef84c8 elementor-widget elementor-widget-image"
+                  data-id="0ef84c8"
+                  data-element_type="widget"
+                  data-widget_type="image.default"
+                >
+                  <div className="elementor-widget-container">
+                    <img
+                      src={bgCover.src}
+                      alt="Background"
+                      className="object-contain w-[900px]"
                     />
                   </div>
-                  <div className="td s-cover">
-                    <button type="submit">
-                      <div className="s-circle"></div>
-                      <span></span>
-                    </button>
-                  </div>
                 </div>
-              </form>
-            </div> */}
+              </div>
+            </div>
           </div>
         </div>
-        <div className="grid  mt-[-250px] justify-center gap-1">
+
+        <div className="">
+          <AnalyzeJobMarket />
+        </div>
+
+        <div className="">
           <JobCategories />
         </div>
+
+        <JobTrendingCities />
+        <Teams />
+        <Footer />
       </div>
-      <div className="">
-        <AnalyzeJobMarket />
-      </div>
-      <JobTrendingCities />
-      <Teams />
-      <Footer />
     </div>
   );
 }

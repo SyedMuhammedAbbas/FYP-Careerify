@@ -38,7 +38,7 @@ export default function Contact() {
           </div>{" "}
           <div>Contact</div>
         </div>
-        <div className="justify-end absolute right-10">
+        {/* <div className="justify-end absolute right-10">
           <form className="bg-[#e5e5e5] flex items-center rounded-[20px] w-[300px] h-[40px]">
             <input
               className="bg-[#e5e5e5] rounded-[20px] outline-none w-[250px] h-[30px] placeholder:text-[20px] placeholder:text-[#6a6a6a] pl-6 text-[25px] text-[#000000]"
@@ -48,7 +48,7 @@ export default function Contact() {
               <BiSearch />
             </button>
           </form>
-        </div>
+        </div> */}
       </div>
       <div className="overflow-y-auto h-[70vh]">
         <div className="max-w-xl mx-auto h-[700px] px-4 sm:px-6 lg:px-8">

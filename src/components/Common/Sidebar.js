@@ -5,7 +5,7 @@ import { BsGraphUp } from "react-icons/bs";
 import { TiContacts } from "react-icons/ti";
 import { BsPeopleFill } from "react-icons/bs";
 import { useRouter } from "next/router";
-import Logo from "../../images/logo_bnw_1.png";
+import Logo from "../../images/logo_white.png";
 // import Logo_black from "../../images/logo.png";
 import Image from "next/image";
 
@@ -23,7 +23,7 @@ export default function Sidebar() {
   return (
     <>
       {pathname !== "/" ? (
-        <div className="bg-[#F15A24] float-left w-56 pl-6 h-[100vh] fixed">
+        <div className="bg-[#111827] float-left w-56 pl-6 h-[100vh] fixed">
           <nav className="grid gap-10">
             <Link href="/">
               <div className="float-left pr-4 pt-5">
@@ -36,7 +36,7 @@ export default function Sidebar() {
                   <div className="w-[30px] h-[30px] float-right">
                     {pathname === item.path && (
                       <div className="flex float-right bg-[#f1f5f9] w-[30px] h-[30px]">
-                        <div className="w-[30px] h-[30px] bg-[#F15A24] rounded-br-[20px]"></div>
+                        <div className="w-[30px] h-[30px] bg-[#111827] rounded-br-[20px]"></div>
                       </div>
                     )}
                   </div>
@@ -45,7 +45,7 @@ export default function Sidebar() {
                       className={`flex items-center pl-5 gap-2 cursor-pointer text-[17px] w-full h-12 font-semibold ${
                         pathname === item.path
                           ? "bg-[#f1f5f9]  text-[#E45326] rounded-tl-[30px] rounded-bl-[30px]"
-                          : "text-[#d6d6d6] hover:text-[#000000]"
+                          : "text-[#d6d6d6] hover:text-[#d46746]"
                       }`}
                     >
                       <div className=" pt-[1px] text-[25px]">{item.icon}</div>
@@ -55,7 +55,7 @@ export default function Sidebar() {
                   <div className="w-[30px] h-[30px] float-right">
                     {pathname === item.path && (
                       <div className="flex float-right bg-[#f1f5f9] w-[30px] h-[30px]">
-                        <div className="w-[30px] h-[30px] bg-[#F15A24] rounded-tr-[20px]"></div>
+                        <div className="w-[30px] h-[30px] bg-[#111827] rounded-tr-[20px]"></div>
                       </div>
                     )}
                   </div>

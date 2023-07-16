@@ -1,8 +1,8 @@
-import Karachi_logo from "@/images/karachi_logo_orange.png";
+import Karachi_logo from "@/images/karachi.jpg";
 // import sample1 from "@/images/sample1.jpg";
 import Image from "next/image";
-import Islamabad_Logo from "@/images/islamabad_logo.png";
-import Lahore_Logo from "@/images/lahore_logo.png";
+import Islamabad_Logo from "@/images/islamabad.jpg";
+import Lahore_Logo from "@/images/lahore.jpg";
 import PopUp1 from "../Common/PopUp1";
 import { useState } from "react";
 
@@ -23,7 +23,7 @@ export default function JobTrendingCities() {
 
   return (
     <div className="relative">
-      <div className="custom-shape-divider-top-1689285966">
+      {/* <div className="custom-shape-divider-top-1689285966">
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
@@ -45,18 +45,18 @@ export default function JobTrendingCities() {
             className="shape-fill"
           ></path>
         </svg>
-      </div>
+      </div> */}
 
-      <div className="flex py-20 justify-center bg-[#521e092c]">
+      <div className="flex py-20 justify-center">
         <div className="grid">
-          <div className="text-[30px] flex justify-center py-20 font-sfpro text-[#F15A24] font-extrabold">
+          <div className="text-[30px] flex justify-center pb-20 font-sfpro text-[#F15A24] font-extrabold">
             Job Trends in Popular Cities
           </div>
-          <div className="flex gap-10 flex-wrap pb-10">
+          <div className="flex gap-10 flex-wrap pb-10 justify-center">
             {popularCities.map((city, index) => {
               return (
                 <>
-                  <div
+                  {/* <div
                     key={index}
                     className="bg-[#ffffffb2] cursor-pointer grid justify-center items-center w-[300px] h-[300px] shadow-xl rounded-[20px]"
                     onClick={() => handleCity(city.title)}
@@ -72,7 +72,15 @@ export default function JobTrendingCities() {
                     <div className="text-[30px] mt-[-100px] text-[#F15A24] font-sfpro font-bold">
                       {city.title}
                     </div>
-                  </div>
+                  </div> */}
+                  <figure onClick={() => handleCity(city.title)} key={index}>
+                    <Image
+                      src={city.image}
+                      alt={city.title}
+                      className="w-[250px] h-[300px]"
+                    />
+                    <figcaption>{city.title}</figcaption>
+                  </figure>
                 </>
               );
             })}
