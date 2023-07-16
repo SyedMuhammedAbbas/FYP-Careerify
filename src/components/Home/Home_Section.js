@@ -14,6 +14,8 @@ import { BiSearch } from "react-icons/bi";
 import Teams from "./Team";
 import { useRouter } from "next/router";
 import bgGrad from "../../images/bg-grad.png";
+import bgleft from "../../images/left-banner1.png";
+import Image from "next/image";
 
 export default function Home_Section() {
   const router = useRouter();
@@ -33,8 +35,15 @@ export default function Home_Section() {
         <div className="flex justify-center">
           <div className="relative h-[70vh] w-[100vw] mt-[10%] flex justify-center items-center">
             <div className="flex flex-row w-[100vw] h-[80vh]  gap-20 justify-center relative ">
-              <div className="flex flex-col w-1/2 items-center justify-center text-white">
-                <div className="text-2xl leading-[50px] font-montserrat text-[35px] font-extrabold text-white  w-[400px] flex justify-start h-[300px] ">
+              <div className="">
+                <Image
+                  src={bgleft}
+                  alt="left Background"
+                  className="object-contain absolute z-10 left-0 w-[800px]"
+                />
+              </div>
+              <div className="flex flex-col w-1/2 items-center justify-center text-white relative">
+                <div className="text-2xl z-20 leading-[50px] font-montserrat text-[35px] font-extrabold text-white  w-[400px] flex justify-start h-[300px] ">
                   <Typewriter
                     options={{
                       strings: [
@@ -51,7 +60,7 @@ export default function Home_Section() {
                   />
                 </div>
 
-                <div className="bg-transparent flex items-center shadow-xl rounded-[40px] border-[2px] border-[#F15A24] w-[400px] h-[50px]">
+                <div className="bg-transparent z-20 flex items-center shadow-xl rounded-[40px] border-[2px] border-[#F15A24] w-[400px] h-[50px]">
                   <input
                     className="bg-transparent outline-none w-[348px] h-[50px] placeholder:text-[20px] placeholder:text-[#e4e4e4] font-montserrat px-5 text-[25px] text-[#ffffff]"
                     placeholder="Search..."
@@ -69,17 +78,12 @@ export default function Home_Section() {
               </div>
 
               <div className=" flex relative w-1/2 justify-center items-center xl2:hidden">
-                <div
-                  className="elementor-element elementor-element-0ef84c8 elementor-widget elementor-widget-image"
-                  data-id="0ef84c8"
-                  data-element_type="widget"
-                  data-widget_type="image.default"
-                >
+                <div className="">
                   <div className="elementor-widget-container">
                     <img
                       src={bgCover.src}
                       alt="Background"
-                      className="object-contain w-[900px]"
+                      className="object-contain w-[1000px]"
                     />
                   </div>
                 </div>
