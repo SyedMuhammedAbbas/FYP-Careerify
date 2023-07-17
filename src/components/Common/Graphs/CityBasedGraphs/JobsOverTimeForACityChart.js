@@ -19,7 +19,14 @@ const JobsOverTimeForACityChart = ({ city }) => {
     // Replace 'your_api_endpoint' with the actual endpoint for 'jobsOverTimeForACity'
     fetch(`${BASEURL}/searchedjobs/jobsOverTimeForACity?city=${city}`)
       .then((response) => response.json())
-      .then((data) => setJobData(data))
+      .then((results) => {
+        // Format the Posted_date to remove the time component
+        const formattedResults = results.map((result) => ({
+          ...result,
+          Posted_date: result.Posted_date.split("T")[0],
+        }));
+        setJobData(formattedResults);
+      })
       .catch((error) => console.error(error));
   }, [city]);
 

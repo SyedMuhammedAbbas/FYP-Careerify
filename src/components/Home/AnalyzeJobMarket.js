@@ -110,7 +110,7 @@ export default function AnalyzeJobMarket() {
 
   return (
     <>
-      <div className="grid justify-center items-center py-[5%]">
+      <div className="grid justify-center items-center py-[5%] z-20">
         <div className="w-[100vw] bg-transparent flex justify-center">
           <div className="w-[600px] text-[#ffffff] grid gap-2 text-center justify-center p-10">
             <div className="text-[30px] font-sfpro text-[#F15A24] font-bold">

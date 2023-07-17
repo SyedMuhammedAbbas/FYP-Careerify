@@ -25,7 +25,7 @@ function SalaryRangeByCityGraph({ jobType }) {
 
   return (
     <div className="bg-white shadow-lg rounded-lg p-4">
-      <ResponsiveContainer width="100%" height={300}>
+      <ResponsiveContainer width="100%" height={500}>
         <ScatterChart data={data}>
           <CartesianGrid />
           <XAxis type="number" dataKey="Min_salary" name="Salary Range" />

@@ -19,7 +19,14 @@ function SalaryRangeTrendGraph({ jobType }) {
       `${BASEURL}/searchedjobs/getSalaryRangeTrendOfJobType?jobType=${jobType}`
     )
       .then((response) => response.json())
-      .then((results) => setData(results))
+      .then((results) => {
+        // Format the Posted_date to remove the time component
+        const formattedResults = results.map((result) => ({
+          ...result,
+          Posted_date: result.Posted_date.split("T")[0],
+        }));
+        setData(formattedResults);
+      })
       .catch((error) => console.error(error));
   }, []);
 
