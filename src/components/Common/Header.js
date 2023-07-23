@@ -9,6 +9,7 @@ import Link from "next/link";
 import { BiSearch } from "react-icons/bi";
 import logo from "@/images/logo_white.png";
 import { useState, useEffect } from "react";
+import { Slant as Hamburger } from "hamburger-react";
 
 export default function Header() {
   const router = useRouter();
@@ -92,7 +93,7 @@ export default function Header() {
                     <Link href={item.pathname}>
                       <div
                         key={index}
-                        className={`flex gap-2 cursor-pointer text-[15px] px-4 py-1 items-center transition-all ease-out duration-200 ${
+                        className={`flex gap-2 cursor-pointer text-[15px] tablet1:hidden  px-4 py-1 items-center transition-all ease-out duration-200 ${
                           item.pathname === "/" && item.name === "Home"
                             ? "bg-[#F15A24] text-[#ffffff] justify-center shadow-lg rounded-xl"
                             : "text-[#ffffff] hover:text-[#F15A24] h-[30px]"
@@ -108,11 +109,14 @@ export default function Header() {
                     </Link>
 
                     {pages.length - 1 !== index && (
-                      <div className="border-r h-6 border-[#8b8b8b]"></div>
+                      <div className="border-r h-6 border-[#8b8b8b] py-auto tablet1:hidden"></div>
                     )}
                   </>
                 );
               })}
+              <div className="hidden tablet1:block">
+                <Hamburger toggled={isOpen} toggle={setOpen} />
+              </div>
             </div>
           </div>
         </div>

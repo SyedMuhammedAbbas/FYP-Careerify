@@ -14,6 +14,7 @@
     "@next/font": "13.1.5",
     "axios": "^1.3.3",
     "chart.js": "^2.9.4",
+    "hamburger-react": "^2.5.0",
     "next": "13.1.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
