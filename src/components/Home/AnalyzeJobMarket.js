@@ -113,7 +113,7 @@ export default function AnalyzeJobMarket() {
       <div className="grid justify-center items-center py-[5%] z-20">
         <div className="w-[100vw] bg-transparent flex justify-center">
           <div className="w-[600px] text-[#ffffff] grid gap-2 text-center justify-center p-10">
-            <div className="text-[30px] font-sfpro text-[#F15A24] font-bold">
+            <div className="text-[30px] tablet:text-[25px] font-sfpro text-[#F15A24] font-bold">
               Why Careerify is the right way to analyze job market?
             </div>
             <div className="text-[15px] font-sfpro text-[#909090] ">
@@ -133,11 +133,11 @@ export default function AnalyzeJobMarket() {
                     <div className={`z-20 mt-7 `}>
                       <Image
                         src={item.imageName}
-                        className="w-[350px] h-[280px] lg:w-[250px] lg:h-[180px] object-cover rounded-[20px]"
+                        className="w-[350px] h-[280px] lg:w-[250px] lg:h-[180px] object-cover rounded-[20px] mobile:w-[200px] mobile:h-[130px]"
                       />
                     </div>
 
-                    <div className="w-[500px] h-[400px] lg:w-[350px] lg:h-[500px] shadow-2xl z-10 -ml-[40px] tablet2.1:ml-0 tablet2.1:-mt-8 bg-[#1F1B24] rounded-[20px] p-10 pl-20">
+                    <div className="w-[500px] h-[400px] lg:w-[350px] lg:h-[500px] mobile:w-[300px] shadow-2xl z-10 -ml-[40px] tablet2.1:ml-0 tablet2.1:-mt-8 bg-[#1F1B24] rounded-[20px] p-10 pl-20 mobile:pl-10">
                       <div className="grid ">
                         <div className="text-[30px] font-sfpro text-[#909090] font-bold">
                           <span className="text-[60px] text-[#a9a9a9] pr-3">

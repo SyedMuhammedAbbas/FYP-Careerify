@@ -18,7 +18,7 @@ export default function Footer() {
                   alt="logo"
                   width={400}
                   height={150}
-                  className="w-[250px] h-[55px]"
+                  className="w-[250px] h-[55px] aspect-auto tablet2.1:w-[200px] tablet2.1:h-auto"
                 />
               </div>
             </div>
@@ -26,8 +26,8 @@ export default function Footer() {
         </footer>
 
         <div className="flex justify-center">
-          <div className="flex items-center w-[80vw] h-[50px] mb-5 rounded-lg bg-[#000000] bg-opacity-20 gap-4 text-center py-4 relative">
-            <div className="flex gap-6 justify-center items-center pl-10">
+          <div className="flex tablet2.1:flex-col items-center w-[80vw] tablet2.1:w-[90vw] h-[50px] tablet2.1:h-auto mb-5 rounded-lg bg-[#000000] bg-opacity-20 gap-4 text-center py-4 relative">
+            <div className="flex gap-6 justify-center items-center pl-10 tablet2.1:pl-0">
               <div className="bg-[#ffffff] rounded-[50%] bg-opacity-10 shadow-xl p-2 text-[20px] cursor-pointer text-[#ffffff]">
                 <ImFacebook />
               </div>
@@ -39,7 +39,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="flex justify-center absolute right-7 items-center font-semibold gap-4 font-montserrat">
+            <div className="flex justify-center absolute tablet2.1:relative tablet2.1:right-0 tablet2.1:text-[15px] right-7 items-center font-semibold gap-4 font-montserrat">
               <div className="text-[#ffffff]">Careerify . </div>
               <p className="text-[#ffffff]">
                 All rights reserved. © {new Date().getFullYear()}

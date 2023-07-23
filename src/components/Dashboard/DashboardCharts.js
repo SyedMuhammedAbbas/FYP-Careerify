@@ -66,7 +66,9 @@ export default function DashboardCharts() {
   // const searchQuery = router.query.search || "";
 
   const [jobCount, setJobCount] = useState();
+  const [searchedJobCount, setSearchedJobCount] = useState();
   const [companyCount, setCompanyCount] = useState();
+  const [searchedCompanyCount, setSearchedCompanyCount] = useState();
 
   const fetchJobCountData = async () => {
     try {
@@ -78,12 +80,41 @@ export default function DashboardCharts() {
       console.log(error.message);
     }
   };
+
+  const fetchSearchedJobCountData = async () => {
+    try {
+      // console.log(searchTitle, "searchTitle");
+      const response = await axios.get(
+        `${BASEURL}/searchedjobs/totalSearchedJobCount?jobTitle=${searchTitle}`
+      );
+      const apiData = response.data;
+
+      setSearchedJobCount(apiData[0].total_jobs);
+      // console.log(response, "helloworld");
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   const fetchCompanyCountData = async () => {
     try {
       const response = await axios.get(`${BASEURL}/jobs/totalCompanies`);
       const apiData = response.data;
-      console.log(apiData, "apiData");
+      // console.log(apiData, "apiData");
       setCompanyCount(apiData[0].total_companies);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  const fetchSearchedCompanyCountData = async () => {
+    try {
+      const response = await axios.get(
+        `${BASEURL}/searchedjobs/totalSearchedCompanies?jobTitle=${searchTitle}`
+      );
+      const apiData = response.data;
+      setSearchedCompanyCount(apiData[0].total_companies);
+      console.log(response, "searched apiData");
     } catch (error) {
       console.log(error.message);
     }
@@ -105,7 +136,12 @@ export default function DashboardCharts() {
     fetchData();
   }, []);
 
-  console.log(jobCount, "jobCOunt");
+  useEffect(() => {
+    fetchSearchedJobCountData();
+    fetchSearchedCompanyCountData();
+  }, [searchTitle]);
+
+  // console.log(jobCount, "jobCOunt");
 
   // const [isFlipped, setIsFlipped] = useState(false);
 
@@ -117,13 +153,19 @@ export default function DashboardCharts() {
     {
       icon: <BsBriefcaseFill />,
       name: "Jobs",
-      data: jobCount,
+      data:
+        searchTitle !== "" && searchTitle !== null
+          ? searchedJobCount
+          : jobCount,
       description: "Total job count of Pakistan",
     },
     {
       icon: <BiBuildings />,
       name: "Companies",
-      data: companyCount,
+      data:
+        searchTitle !== "" && searchTitle !== null
+          ? searchedCompanyCount
+          : companyCount,
       description: "Total count of local companies providing IT jobs",
     },
   ];
@@ -172,58 +214,58 @@ export default function DashboardCharts() {
             </div>
             {!searchTitle ? (
               <div className=" flex flex-wrap space-y-4">
-                <div className=" w-2/4  px-4">
+                <div className=" w-2/4 xl3:w-[100%]  px-4">
                   <JobPostingsTrend />
                 </div>
-                <div className=" w-2/4 px-4">
+                <div className=" w-2/4 xl3:w-[100%] px-4">
                   <JobDistributionByType />
                 </div>
-                <div className=" w-2/4 px-4">
+                <div className=" w-2/4 xl3:w-[100%] px-4">
                   <JobDataByCities />
                 </div>
-                <div className=" w-2/4 px-4">
+                <div className=" w-2/4 xl3:w-[100%] px-4">
                   <JobCountsByTitleAndWebsite />
                 </div>
-                <div className=" w-2/4 px-4">
+                <div className=" w-2/4 xl3:w-[100%] px-4">
                   <JobDataByAverageSalaries />
                 </div>
               </div>
             ) : (
               <div className=" flex flex-wrap space-y-4">
-                <div className=" w-2/4  px-4">
+                <div className=" w-2/4 xl3:w-[100%]   px-4">
                   <DurationOfJobPostingsByTitle jobTitle={searchTitle} />
                 </div>
-                <div className=" w-2/4 px-4">
+                <div className=" w-2/4 xl3:w-[100%]  px-4">
                   <JobAverageSalaryByCityAndTitle jobTitle={searchTitle} />
                 </div>
-                <div className=" w-2/4 px-4">
+                <div className=" w-2/4 xl3:w-[100%]  px-4">
                   <JobAverageSalaryByJobTypeAndTitle jobTitle={searchTitle} />
                 </div>
-                <div className=" w-2/4 px-4">
+                <div className=" w-2/4 xl3:w-[100%]  px-4">
                   <JobByAverageSalary jobTitle={searchTitle} />
                 </div>
-                <div className=" w-2/4 px-4">
+                <div className=" w-2/4 xl3:w-[100%]  px-4">
                   <JobByAverageSalaryByYearAndCompany jobTitle={searchTitle} />
                 </div>
-                <div className=" w-2/4 px-4">
+                <div className=" w-2/4 xl3:w-[100%]  px-4">
                   <JobOpeningsByJobTypeAndTitle jobTitle={searchTitle} />
                 </div>
-                <div className=" w-2/4 px-4">
+                <div className=" w-2/4 xl3:w-[100%]  px-4">
                   <JobBySalaryRangeDateAndTitle jobTitle={searchTitle} />
                 </div>
-                <div className=" w-2/4 px-4">
+                <div className=" w-2/4 xl3:w-[100%]  px-4">
                   <JobCountByCity jobTitle={searchTitle} />
                 </div>
-                <div className=" w-2/4 px-4">
+                <div className=" w-2/4 xl3:w-[100%]  px-4">
                   <JobOpeningsByCityAndTitle jobTitle={searchTitle} />
                 </div>
-                <div className=" w-2/4 px-4">
+                <div className=" w-2/4 xl3:w-[100%]  px-4">
                   <JobOpeningsByCompanyAndTitle jobTitle={searchTitle} />
                 </div>
-                <div className=" w-2/4 px-4">
+                <div className=" w-2/4 xl3:w-[100%]  px-4">
                   <JobOpeningsByDateAndTitle jobTitle={searchTitle} />
                 </div>
-                <div className=" w-2/4 px-4">
+                <div className=" w-2/4 xl3:w-[100%]  px-4">
                   <JobOpeningsByWebsiteAndTitle jobTitle={searchTitle} />
                 </div>
               </div>

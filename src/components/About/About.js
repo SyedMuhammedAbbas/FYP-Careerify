@@ -3,6 +3,7 @@ import { SlGraph } from "react-icons/sl";
 import { BsPeopleFill } from "react-icons/bs";
 import { BiSearch } from "react-icons/bi";
 import { IoIosArrowForward } from "react-icons/io";
+import Teams from "../Home/Team";
 
 export default function About() {
   return (
@@ -66,6 +67,8 @@ export default function About() {
             professional success. Explore the trends, navigate the
             opportunities, and thrive with Careerify.
           </div>
+
+          <Teams />
         </div>
       </div>
     </>

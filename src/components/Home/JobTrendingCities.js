@@ -49,7 +49,7 @@ export default function JobTrendingCities() {
 
       <div className="flex py-20 justify-center">
         <div className="grid">
-          <div className="text-[30px] flex justify-center pb-20 font-sfpro text-[#F15A24] font-extrabold">
+          <div className="text-[30px] mobile2:text-[25px] flex justify-center pb-20 font-sfpro text-[#F15A24] font-extrabold">
             Job Trends in Popular Cities
           </div>
           <div className="flex gap-10 flex-wrap pb-10 justify-center">

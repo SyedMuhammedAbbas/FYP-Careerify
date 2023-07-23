@@ -17,8 +17,8 @@ export default function Teams() {
   return (
     <>
       <div className="flex justify-center items-center">
-        <div className="flex flex-col bg-[#202736] shadow-lg rounded-[20px] mb-10 w-[70vw] justify-center items-center p-8 gap-10 relative">
-          <div>
+        <div className="flex flex-col bg-[#202736] shadow-lg rounded-[20px] mb-10 w-[70vw] mobile:w-[90vw] justify-center items-center p-8 gap-10 relative">
+          <div className="flex flex-col justify-center">
             <div className="text-[#F15A24] font-sfpro font-bold text-[35px] flex justify-center">
               Meet The Team
             </div>
