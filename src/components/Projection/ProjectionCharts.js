@@ -29,11 +29,16 @@ export default function ProjectionCharts() {
           {jobTitles.map((item, index) => {
             return (
               <>
-                <div key={index} className=" w-2/4 xl3:w-[100%]  px-4">
-                  <ProbOfTitleByCompany title={item.company} />
+                <div className="text-[30px] text-[#111827] font-montserrat">
+                  Predicted data for: {item.type}
                 </div>
-                <div key={index} className=" w-2/4 xl3:w-[100%]  px-4">
-                  <ProbOfTitleByType title={item.type} />
+                <div className="flex gap-5">
+                  <div key={index} className=" w-2/4 xl3:w-[100%]  px-4">
+                    <ProbOfTitleByCompany title={item.company} />
+                  </div>
+                  <div key={index} className=" w-2/4 xl3:w-[100%]  px-4">
+                    <ProbOfTitleByType title={item.type} />
+                  </div>
                 </div>
               </>
             );
