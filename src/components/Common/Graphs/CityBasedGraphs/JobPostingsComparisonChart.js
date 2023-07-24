@@ -15,7 +15,7 @@ const JobPostingsComparisonChart = ({ city }) => {
   const [jobData, setJobData] = useState([]);
 
   useEffect(() => {
-    // Make API call to fetch job count data
+    // Make API call to fetch job type count data for the specified city
     // Replace 'your_api_endpoint' with the actual endpoint for 'jobPostingsComparison'
     fetch(`${BASEURL}/searchedjobs/jobPostingsComparison?city=${city}`)
       .then((response) => response.json())
@@ -28,7 +28,7 @@ const JobPostingsComparisonChart = ({ city }) => {
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={jobData}>
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="Company_name" />
+          <XAxis dataKey="Job_type" />
           <YAxis />
           <Tooltip />
           <Legend />
@@ -36,10 +36,10 @@ const JobPostingsComparisonChart = ({ city }) => {
         </BarChart>
       </ResponsiveContainer>
       <p className="flex justify-center text-[15px] text-gray-500">
-        The bar chart visually compares the number of job postings offered by
-        different companies within the specified city. It helps us understand
-        the distribution of job postings and identify companies that have a
-        significant presence in the job market.
+        The bar chart visually compares the number of job postings of different
+        types within the specified city. It helps us understand the distribution
+        of job types and identify the types of jobs that have a significant
+        presence in the job market.
       </p>
     </div>
   );
