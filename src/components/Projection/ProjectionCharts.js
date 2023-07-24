@@ -1,5 +1,6 @@
 import { IoIosArrowForward } from "react-icons/io";
 import ProbOfTitleByCompany from "../Common/Graphs/PredictionGraphs/ProbOfTitleByCompany";
+import ProbOfTitleByType from "../Common/Graphs/PredictionGraphs/ProbOfTitleByType";
 
 export default function ProjectionCharts() {
   const jobTitles = [
@@ -27,9 +28,14 @@ export default function ProjectionCharts() {
         <div className=" flex flex-wrap space-y-4">
           {jobTitles.map((item, index) => {
             return (
-              <div key={index} className=" w-2/4 xl3:w-[100%]  px-4">
-                <ProbOfTitleByCompany title={item} />
-              </div>
+              <>
+                <div key={index} className=" w-2/4 xl3:w-[100%]  px-4">
+                  <ProbOfTitleByCompany title={item} />
+                </div>
+                <div key={index} className=" w-2/4 xl3:w-[100%]  px-4">
+                  <ProbOfTitleByType title={item} />
+                </div>
+              </>
             );
           })}
         </div>
