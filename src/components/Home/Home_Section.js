@@ -46,7 +46,7 @@ export default function Home_Section() {
                 <div className="bg-transparent z-20 flex items-center shadow-xl mt-[5%] rounded-[40px] border-[2px] border-[#F15A24] w-[400px] h-[50px] mobile:w-[300px] mobile:h-[40px]">
                   <input
                     className="bg-transparent outline-none w-[348px] h-[50px] mobile:w-[253px] mobile:h-[40px] placeholder:text-[20px] placeholder:text-[#e4e4e4] font-montserrat px-5 text-[25px] mobile:text-[20px] text-[#ffffff]"
-                    placeholder="Search..."
+                    placeholder="Search By Job Title..."
                     value={searchResult}
                     onChange={(e) => setSearchResult(e.target.value)}
                   />
