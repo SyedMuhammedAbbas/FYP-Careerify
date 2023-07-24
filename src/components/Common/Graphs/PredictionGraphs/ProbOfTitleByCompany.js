@@ -43,7 +43,7 @@ const ProbOfTitleByCompany = ({ title }) => {
           <Legend />
           <Line
             type="monotone"
-            dataKey="Probablity"
+            dataKey="Probability"
             stroke="#8884d8"
             activeDot={{ r: 8 }}
           />

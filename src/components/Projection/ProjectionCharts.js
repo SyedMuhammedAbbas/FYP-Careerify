@@ -4,12 +4,12 @@ import ProbOfTitleByType from "../Common/Graphs/PredictionGraphs/ProbOfTitleByTy
 
 export default function ProjectionCharts() {
   const jobTitles = [
-    ".Net Developer",
-    "Content_writer",
-    "Data Scientist",
-    "Graphic Designer",
-    "React Developer",
-    "Wordpress Developer",
+    { company: ".Net Developer", type: ".Net Developer" },
+    { company: "Content_writer", type: "Content Writer" },
+    { company: "Data Scientist", type: "Data Scientist" },
+    { company: "Graphic Designer", type: "Graphic Designer" },
+    { company: "React Developer", type: "React Developer" },
+    { company: "Wordpress Developer", type: "Wordpress Developer" },
   ];
 
   return (
@@ -30,10 +30,10 @@ export default function ProjectionCharts() {
             return (
               <>
                 <div key={index} className=" w-2/4 xl3:w-[100%]  px-4">
-                  <ProbOfTitleByCompany title={item} />
+                  <ProbOfTitleByCompany title={item.company} />
                 </div>
                 <div key={index} className=" w-2/4 xl3:w-[100%]  px-4">
-                  <ProbOfTitleByType title={item} />
+                  <ProbOfTitleByType title={item.type} />
                 </div>
               </>
             );
